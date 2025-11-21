@@ -1,0 +1,324 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taverna dello Sbandieratore</title>
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <style>
+        /* Stile generale */
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f5; /* bianco caldo */
+            color: #800000; /* rosso scuro */
+        }
+
+        header {
+            background-color: #800000;
+            color: #ffd700;
+            text-align: center;
+            padding: 30px 0;
+            background-image: url('natalizio_sfondo.png');
+            background-size: cover;
+            background-position: center;
+        }
+
+        header img.logo {
+            max-height: 110px;         
+            display: block;            
+            margin: 0 auto 10px;       
+            border: 3px solid #ffd700; 
+            border-radius: 15px;       
+            box-shadow: 0 0 15px #ffd700, 0 0 30px #fff8dc; 
+            animation: sparkle 2s infinite alternate; 
+        }
+
+        @keyframes sparkle {
+            0% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
+            50% { box-shadow: 0 0 20px #ffd700, 0 0 35px #fff8dc; }
+            100% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 2px 2px #b8860b; 
+        }
+
+        nav {
+            background-color: #ff0000; 
+            text-align: center;
+            border-bottom: 3px solid #ffd700; 
+        }
+
+        nav a {
+            color: #ffd700; 
+            text-decoration: none;
+            margin: 10px 15px;
+            font-weight: bold;
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 1px 1px #800000; 
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 0 20px;
+        }
+
+        section {
+            margin-bottom: 50px;
+        }
+
+        h2, h3 {
+            color: #800000;
+            font-family: 'MedievalSharp', cursive;
+        }
+
+        h2 {
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 5px;
+            font-size: 1.8em;
+        }
+
+        h3 {
+            font-size: 1.5em;
+            margin-top: 20px;
+        }
+
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        li {
+            background-color: #fff8dc; 
+            margin: 10px 0;
+            padding: 12px 20px;
+            border-left: 5px solid #ffd700; 
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+            font-size: 1.1em;
+        }
+
+        footer {
+            text-align: center;
+            background-color: #800000;
+            color: #ffd700; 
+            padding: 20px 0;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1em;
+        }
+
+        /* Sezione Social */
+        .social-section {
+            text-align: center; 
+            padding: 30px; 
+            background-color: #fff8dc; 
+            border-top: 3px solid #ffd700;
+        }
+
+        .social-section h2 {
+            font-family:'MedievalSharp', cursive; 
+            color:#800000; 
+            margin-bottom:15px;
+        }
+
+        .social-section p {
+            font-family:'Arial', sans-serif; 
+            color:#555; 
+            margin-bottom:20px;
+        }
+
+        .social-buttons {
+            display:flex; 
+            justify-content:center; 
+            gap:20px; 
+            flex-wrap:wrap;
+        }
+
+        .social-buttons a {
+            display:flex; 
+            align-items:center; 
+            gap:8px; 
+            text-decoration:none; 
+            color:#fff; 
+            padding:10px 20px; 
+            border-radius:5px; 
+            font-weight:bold; 
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .social-buttons a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 15px #ffd700, 0 0 25px #fff8dc;
+        }
+
+        .instagram { background:#E1306C; }
+        .facebook { background:#1877F2; }
+
+        .social-buttons img {
+            width:20px; 
+            height:20px; 
+            filter:invert(1);
+        }
+
+        @media (max-width: 600px) {
+            nav a {
+                display: block;
+                margin: 5px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <img src="logo_alfieri.png" alt="Logo del Gruppo" class="logo">
+        <h1>Taverna dello Sbandieratore</h1>
+        <p style="color:#ffd700; font-family: 'MedievalSharp', cursive; font-size:1.2em;">
+            Benvenuti alla Taverna dello Sbandieratore!
+        </p>
+    </header>
+
+    <nav>
+        <a href="#antipasti">Antipasti</a>
+        <a href="#primi">Primi</a>
+        <a href="#secondi">Secondi</a>
+        <a href="#contorni">Contorni</a>
+        <a href="#fritti">Fritti</a>
+        <a href="#dolci">Dolci</a>
+        <a href="#bevande">Bevande</a>
+        <a href="#menu-adulti">Menù Adulti</a>
+        <a href="#menu-bimbi">Menù Bimbi</a>
+    </nav>
+
+    <main>
+        <!-- Le sezioni del menu rimangono uguali -->
+        <!-- Antipasti -->
+        <section id="antipasti">
+            <h2>Antipasti</h2>
+            <ul>
+                <li>Tagliere dello sbandieratore - €8</li>
+                <li>Tagliere dell'alfiere Aperitivo - €12</li>
+            </ul>
+        </section>
+
+        <!-- Primi -->
+        <section id="primi">
+            <h2>Primi Piatti</h2>
+            <ul>
+                <li>Pasta al ragù della casa - €10</li>
+                <li>Pasta alla boscagliola - €12</li>
+                <li>Pasta al pomodoro semplice - €6</li>
+            </ul>
+        </section>
+
+        <!-- Secondi -->
+        <section id="secondi">
+            <h2>Secondi Piatti</h2>
+            <ul>
+                <li>Panino salsiccia - €7</li>
+                <li>Panino cotoletta - €6</li>
+                <li>Panino con affettato - €4</li>
+                <li>Arrosticini 6pz - €10</li>
+                <li>Grigliata mista di carne - €16</li>
+            </ul>
+        </section>
+
+        <!-- Contorni -->
+        <section id="contorni">
+            <h2>Contorni</h2>
+            <ul>
+                <li>Verdure grigliate - €4</li>
+            </ul>
+        </section>
+
+        <!-- Fritti -->
+        <section id="fritti">
+            <h2>Fritti</h2>
+            <ul>
+                <li>Patatine fritte - €3</li>
+                <li>Pizza fritta - €5</li>
+                <li>Polenta fritta - €7</li>
+                <li>Frittelle - €5</li>
+            </ul>
+        </section>
+
+        <!-- Dolci -->
+        <section id="dolci">
+            <h2>Dolci</h2>
+            <ul>
+                <li>Crepes alla nutella - €4</li>
+                <li>Ciambelle al vino - €3</li>
+                <li>Nocchiata 1pz - €2</li>
+            </ul>
+        </section>
+
+        <!-- Bevande -->
+        <section id="bevande">
+            <h2>Bevande</h2>
+            <ul>
+                <li>Acqua 1/2lt- €1</li>
+                <li>Vino bicchiere - €3</li>
+                <li>Vino bottiglia - €8</li>
+                <li>Coca Cola - €3</li>
+                <li>Prosecco bicchiere - €3</li>
+                <li>Prosecco bottiglia - €8</li>
+                <li>Caffè - €1</li>
+                <li>Cioccolata calda - €3</li>
+                <li>Fanta - €3</li>
+            </ul>
+        </section>
+
+        <!-- Menù -->
+        <section id="menu-adulti">
+            <h2>Menù Fisso Adulti</h2>
+            <p>Prezzo: <strong>€25 a persona</strong></p>
+            <ul>
+                <li>Antipasto</li>
+                <li>Primo piatto a scelta</li>
+                <li>Secondo piatto a scelta</li>
+                <li>Contorni</li>
+                <li>Fritti</li>
+                <li>Dolce</li>
+            </ul>
+        </section>
+
+        <section id="menu-bimbi">
+            <h2>Menù Fisso Bimbi</h2>
+            <p>Prezzo: <strong>€12 a bambino</strong></p>
+            <ul>
+                <li>Pasta al pomodoro</li>
+                <li>Cotoletta con patatine</li>
+                <li>Dolce</li>
+            </ul>
+        </section>
+
+    </main>
+
+    <!-- Sezione Social -->
+    <section class="social-section">
+        <h2>Seguici per non perdere aggiornamenti!</h2>
+        <p>Rimani aggiornato sui nostri spettacoli e novità.</p>
+        <div class="social-buttons">
+            <a href="https://www.instagram.com/sbandieratoriartena" target="_blank" class="instagram">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/instagram.svg" alt="Instagram"> Instagram
+            </a>
+            <a href="https://www.facebook.com/sbandieratoriartena" target="_blank" class="facebook">
+                <img src="https://cdn.jsdelivr.net/npm/simple-icons@v9/icons/facebook.svg" alt="Facebook"> Facebook
+            </a>
+        </div>
+    </section>
+
+    <footer>
+        &copy; 2025 Taverna dello Sbandieratore - Buon Natale a tutti!
+    </footer>
+</body>
+</html>
+
