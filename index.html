@@ -11,28 +11,28 @@
             font-family: 'Arial', sans-serif;
             margin: 0;
             padding: 0;
-            background-color: #fff5f5; /* bianco caldo */
-            color: #800000; /* rosso scuro */
+            background-color: #fff5f5;
+            color: #800000;
         }
 
         header {
             background-color: #800000;
             color: #ffd700;
             text-align: center;
-            padding: 30px 0;
+            padding: 20px 10px;
             background-image: url('natalizio_sfondo.png');
             background-size: cover;
             background-position: center;
         }
 
         header img.logo {
-            max-height: 110px;         
-            display: block;            
-            margin: 0 auto 10px;       
-            border: 3px solid #ffd700; 
-            border-radius: 15px;       
-            box-shadow: 0 0 15px #ffd700, 0 0 30px #fff8dc; 
-            animation: sparkle 2s infinite alternate; 
+            max-height: 100px;
+            display: block;
+            margin: 0 auto 10px;
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ffd700, 0 0 30px #fff8dc;
+            animation: sparkle 2s infinite alternate;
         }
 
         @keyframes sparkle {
@@ -43,24 +43,36 @@
 
         header h1 {
             margin: 0;
-            font-size: 2.5em;
+            font-size: 2em;
             font-family: 'MedievalSharp', cursive;
-            text-shadow: 2px 2px #b8860b; 
+            text-shadow: 2px 2px #b8860b;
         }
 
+        header p {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.1em;
+            margin: 5px 0 0 0;
+        }
+
+        /* Menu di navigazione */
         nav {
-            background-color: #ff0000; 
+            background-color: #ff0000;
             text-align: center;
-            border-bottom: 3px solid #ffd700; 
+            border-bottom: 3px solid #ffd700;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 5px 0;
         }
 
         nav a {
-            color: #ffd700; 
+            color: #ffd700;
             text-decoration: none;
-            margin: 10px 15px;
+            margin: 5px 10px;
             font-weight: bold;
             font-family: 'MedievalSharp', cursive;
-            text-shadow: 1px 1px #800000; 
+            text-shadow: 1px 1px #800000;
+            font-size: 1em;
         }
 
         nav a:hover {
@@ -70,27 +82,24 @@
         main {
             max-width: 900px;
             margin: 20px auto;
-            padding: 0 20px;
+            padding: 0 10px;
         }
 
         section {
-            margin-bottom: 50px;
-        }
-
-        h2, h3 {
-            color: #800000;
-            font-family: 'MedievalSharp', cursive;
+            margin-bottom: 40px;
         }
 
         h2 {
+            color: #800000;
+            font-family: 'MedievalSharp', cursive;
             border-bottom: 3px solid #ffd700;
             padding-bottom: 5px;
-            font-size: 1.8em;
+            font-size: 1.6em;
         }
 
         h3 {
-            font-size: 1.5em;
-            margin-top: 20px;
+            font-size: 1.3em;
+            margin-top: 15px;
         }
 
         ul {
@@ -99,80 +108,158 @@
         }
 
         li {
-            background-color: #fff8dc; 
-            margin: 10px 0;
-            padding: 12px 20px;
-            border-left: 5px solid #ffd700; 
+            background-color: #fff8dc;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-left: 5px solid #ffd700;
             box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-            font-size: 1.1em;
+            font-size: 1em;
         }
 
         footer {
             text-align: center;
             background-color: #800000;
-            color: #ffd700; 
-            padding: 20px 0;
+            color: #ffd700;
+            padding: 15px 10px;
             font-family: 'MedievalSharp', cursive;
-            font-size: 1em;
+            font-size: 0.9em;
         }
 
-        /* Sezione Social */
+        footer p {
+            margin: 5px 0;
+        }
+
+        /* Sezione social */
         .social-section {
-            text-align: center; 
-            padding: 30px; 
-            background-color: #fff8dc; 
+            text-align: center;
+            padding: 20px;
+            background-color: #fff8dc;
             border-top: 3px solid #ffd700;
         }
 
         .social-section h2 {
-            font-family:'MedievalSharp', cursive; 
-            color:#800000; 
-            margin-bottom:15px;
+            font-family:'MedievalSharp', cursive;
+            color:#800000;
+            margin-bottom:10px;
+            font-size: 1.5em;
         }
 
         .social-section p {
-            font-family:'Arial', sans-serif; 
-            color:#555; 
-            margin-bottom:20px;
+            font-family:'Arial', sans-serif;
+            color:#555;
+            margin-bottom:15px;
+            font-size: 1em;
         }
 
         .social-buttons {
-            display:flex; 
-            justify-content:center; 
-            gap:20px; 
+            display:flex;
+            justify-content:center;
+            gap:15px;
             flex-wrap:wrap;
         }
 
         .social-buttons a {
-            display:flex; 
-            align-items:center; 
-            gap:8px; 
-            text-decoration:none; 
-            color:#fff; 
-            padding:10px 20px; 
-            border-radius:5px; 
-            font-weight:bold; 
+            display:flex;
+            align-items:center;
+            gap:5px;
+            text-decoration:none;
+            color:#fff;
+            padding:8px 15px;
+            border-radius:5px;
+            font-weight:bold;
+            font-size:0.9em;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
         .social-buttons a:hover {
             transform: scale(1.05);
-            box-shadow: 0 0 15px #ffd700, 0 0 25px #fff8dc;
+            box-shadow: 0 0 10px #ffd700, 0 0 15px #fff8dc;
         }
 
         .instagram { background:#E1306C; }
         .facebook { background:#1877F2; }
 
         .social-buttons img {
-            width:20px; 
-            height:20px; 
+            width:18px;
+            height:18px;
             filter:invert(1);
+        }
+
+        /* Box Informativa responsive */
+        #informativaBox {
+            display:none;
+            position:fixed;
+            top:0;
+            left:0;
+            width:100%;
+            height:100%;
+            background:rgba(0,0,0,0.7);
+            z-index:9999;
+            overflow:auto;
+            padding:10px;
+            box-sizing:border-box;
+        }
+
+        #informativaBoxContent {
+            background:#fff5f5;
+            color:#800000;
+            max-width:95%;
+            margin:30px auto;
+            padding:20px;
+            border:3px solid #ffd700;
+            border-radius:15px;
+            box-shadow:0 0 15px #ffd700;
+            position:relative;
+            overflow:auto;
+            opacity: 0;
+            transform: translateY(50px);
+            transition: transform 0.5s ease, opacity 0.5s ease;
+        }
+
+        #informativaBoxContent.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        #informativaBoxContent h2 {
+            text-align:center;
+            font-size:1.6em;
+        }
+
+        #informativaBoxContent p, #informativaBoxContent ul {
+            font-size:1em;
+            line-height:1.5em;
+        }
+
+        #informativaBoxContent ul {
+            padding-left:20px;
+        }
+
+        #informativaBoxContent span.closeBtn {
+            position:absolute;
+            top:10px;
+            right:15px;
+            cursor:pointer;
+            font-size:1.5em;
+            font-weight:bold;
         }
 
         @media (max-width: 600px) {
             nav a {
-                display: block;
-                margin: 5px 0;
+                margin:3px 5px;
+                font-size:0.9em;
+            }
+
+            header h1 {
+                font-size:1.8em;
+            }
+
+            header p {
+                font-size:1em;
+            }
+
+            #informativaBoxContent {
+                padding:15px;
             }
         }
     </style>
@@ -181,9 +268,7 @@
     <header>
         <img src="logo_alfieri.jpeg" alt="Logo del Gruppo" class="logo">
         <h1>Taverna dello Sbandieratore</h1>
-        <p style="color:#ffd700; font-family: 'MedievalSharp', cursive; font-size:1.2em;">
-            Benvenuti alla Taverna dello Sbandieratore!
-        </p>
+        <p>Benvenuti alla Taverna dello Sbandieratore!</p>
     </header>
 
     <nav>
@@ -196,10 +281,10 @@
         <a href="#bevande">Bevande</a>
         <a href="#menu-adulti">Menù Adulti</a>
         <a href="#menu-bimbi">Menù Bimbi</a>
+        <a href="javascript:void(0)" onclick="openInformativa()">Informativa</a>
     </nav>
 
     <main>
-        <!-- Le sezioni del menu rimangono uguali -->
         <!-- Antipasti -->
         <section id="antipasti">
             <h2>Antipasti</h2>
@@ -299,7 +384,6 @@
                 <li>Dolce</li>
             </ul>
         </section>
-
     </main>
 
     <!-- Sezione Social -->
@@ -317,9 +401,47 @@
     </section>
 
     <footer>
-        &copy; 2025 Taverna dello Sbandieratore - Buon Natale a tutti!
+        <p>&copy; 2025 Taverna dello Sbandieratore - Buon Natale a tutti!</p>
+        <p style="font-size:0.85em; margin-top:5px;">
+            • Contributo libero su importo consigliato. Gli importi indicati non costituiscono corrispettivo obbligatorio ma donazione volontaria. L’associazione rilascia ricevuta di erogazione liberale per ogni contributo.
+        </p>
     </footer>
+
+    <!-- Box Informativa -->
+    <div id="informativaBox">
+        <div id="informativaBoxContent">
+            <span class="closeBtn" onclick="closeInformativa()">×</span>
+            <h2>Informativa</h2>
+            <p><strong>Informazioni per gli Ospiti della Taverna dello Sbandieratore</strong></p>
+            <p>Durante il periodo dell’evento cittadino “Artena Città Presepe” (8 dicembre – 6 gennaio), la nostra Associazione di Promozione Sociale mette a disposizione la propria sede operativa trasformandola, per tradizione, nella Taverna dello Sbandieratore. Questa iniziativa è resa possibile grazie all’impegno esclusivo dei volontari, che prestano gratuitamente la propria opera per sostenere le finalità istituzionali dell’associazione.</p>
+            <p>L’attività di somministrazione di cibo e bevande proposta in questi giorni non ha carattere commerciale, ma rientra tra le iniziative occasionali di raccolta fondi previste dalla normativa sul Terzo Settore. Lo scopo principale non è la vendita di prodotti, bensì la creazione di un momento comunitario in cui i partecipanti possono offrire un contributo volontario a sostegno delle attività sportive, storiche e folkloristiche svolte durante tutto l’anno.</p>
+            <p>Per questo motivo, all’interno del menu troverete esclusivamente “prezzi consigliati”. Tali importi non rappresentano un corrispettivo obbligatorio, ma un’indicazione orientativa del contributo suggerito per sostenere le nostre attività. Chiunque può liberamente decidere l’importo da donare, secondo le proprie possibilità.</p>
+            <p>I proventi raccolti durante questo periodo saranno integralmente destinati al sostegno delle nostre attività principali, tra cui l’organizzazione del Festival delle Bandiere, la partecipazione ai campionati nazionali e l’acquisto e la manutenzione del materiale storico dell’associazione.</p>
+            <p>In ottemperanza alle norme vigenti e ai principi di trasparenza che guidano la nostra APS, per ogni donazione viene rilasciata una ricevuta di erogazione liberale, registrata nella contabilità separata dedicata a questa raccolta fondi. Tale ricevuta certifica che il contributo ricevuto non costituisce pagamento di un prezzo, ma una donazione volontaria a favore dell’associazione.</p>
+            <p>Tutte le attività sono gestite con cura, rispetto e responsabilità, nel pieno spirito del volontariato. Vi ringraziamo per il vostro sostegno, per la partecipazione e per l’aiuto concreto che offrite alla crescita culturale e sportiva della nostra realtà associativa.</p>
+            <p><strong>Grazie di cuore e buona permanenza presso la Taverna dello Sbandieratore!</strong></p>
+        </div>
+    </div>
+
+    <script>
+        function openInformativa() {
+            const box = document.getElementById('informativaBox');
+            const content = document.getElementById('informativaBoxContent');
+            box.style.display = 'block';
+            setTimeout(() => {
+                content.classList.add('show');
+            }, 50);
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        function closeInformativa() {
+            const box = document.getElementById('informativaBox');
+            const content = document.getElementById('informativaBoxContent');
+            content.classList.remove('show');
+            setTimeout(() => {
+                box.style.display = 'none';
+            }, 500);
+        }
+    </script>
 </body>
 </html>
-
-
