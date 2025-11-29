@@ -73,6 +73,7 @@
             font-family: 'MedievalSharp', cursive;
             text-shadow: 1px 1px #800000;
             font-size: 1em;
+            cursor: pointer;
         }
 
         nav a:hover {
@@ -82,11 +83,21 @@
         main {
             max-width: 900px;
             margin: 20px auto;
-            padding: 0 10px;
+            padding: 20px;
+            background-image: url('Sfilata.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-color: rgba(255,255,255,0.6);
+            background-blend-mode: lighten;
         }
 
         section {
             margin-bottom: 40px;
+            background-color: rgba(255,255,255,0.8);
+            padding: 10px 15px;
+            border-radius: 10px;
         }
 
         h2 {
@@ -185,63 +196,56 @@
             filter:invert(1);
         }
 
-        /* Box Informativa responsive */
-        #informativaBox {
-            display:none;
-            position:fixed;
-            top:0;
-            left:0;
-            width:100%;
-            height:100%;
-            background:rgba(0,0,0,0.7);
-            z-index:9999;
+        /* Box modali */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
             overflow:auto;
-            padding:10px;
-            box-sizing:border-box;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px;
+            box-sizing: border-box;
         }
 
-        #informativaBoxContent {
-            background:#fff5f5;
-            color:#800000;
-            max-width:95%;
-            margin:30px auto;
-            padding:20px;
-            border:3px solid #ffd700;
-            border-radius:15px;
-            box-shadow:0 0 15px #ffd700;
-            position:relative;
-            overflow:auto;
-            opacity: 0;
-            transform: translateY(50px);
-            transition: transform 0.5s ease, opacity 0.5s ease;
+        .modal-content {
+            background-color: #fff5f5;
+            margin: 50px auto;
+            padding: 20px;
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 0 15px #ffd700;
+            position: relative;
         }
 
-        #informativaBoxContent.show {
-            opacity: 1;
-            transform: translateY(0);
+        .modal-content h2 {
+            text-align: center;
+            color: #800000;
+            margin-bottom: 15px;
+            font-family: 'MedievalSharp', cursive;
         }
 
-        #informativaBoxContent h2 {
-            text-align:center;
-            font-size:1.6em;
+        .modal-content p, .modal-content ul {
+            font-size: 1em;
+            line-height: 1.5em;
+            color: #800000;
         }
 
-        #informativaBoxContent p, #informativaBoxContent ul {
-            font-size:1em;
-            line-height:1.5em;
+        .modal-content ul {
+            padding-left: 20px;
         }
 
-        #informativaBoxContent ul {
-            padding-left:20px;
-        }
-
-        #informativaBoxContent span.closeBtn {
-            position:absolute;
-            top:10px;
-            right:15px;
-            cursor:pointer;
-            font-size:1.5em;
-            font-weight:bold;
+        .modal-content span.closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
         }
 
         @media (max-width: 600px) {
@@ -258,8 +262,8 @@
                 font-size:1em;
             }
 
-            #informativaBoxContent {
-                padding:15px;
+            main {
+                padding: 10px;
             }
         }
     </style>
@@ -281,7 +285,8 @@
         <a href="#bevande">Bevande</a>
         <a href="#menu-adulti">Menù Adulti</a>
         <a href="#menu-bimbi">Menù Bimbi</a>
-        <a href="javascript:void(0)" onclick="openInformativa()">Informativa</a>
+        <a onclick="openInformativa()">Informativa</a>
+        <a onclick="openContatti()">Info & Contatti</a>
     </nav>
 
     <main>
@@ -298,8 +303,8 @@
         <section id="primi">
             <h2>Primi Piatti</h2>
             <ul>
-                <li>Pasta al ragù della casa - €10</li>
-                <li>Pasta alla boscagliola - €12</li>
+                <li>Pasta all'amatriciana - €10</li>
+                <li>Pasta alla boscagliola - €10</li>
                 <li>Pasta al pomodoro semplice - €6</li>
             </ul>
         </section>
@@ -311,7 +316,7 @@
                 <li>Panino salsiccia - €7</li>
                 <li>Panino cotoletta - €6</li>
                 <li>Panino con affettato - €4</li>
-                <li>Arrosticini 6pz - €10</li>
+                <li>Arrosticini 8pz - €10</li>
                 <li>Grigliata mista di carne - €16</li>
             </ul>
         </section>
@@ -329,8 +334,6 @@
             <h2>Fritti</h2>
             <ul>
                 <li>Patatine fritte - €3</li>
-                <li>Pizza fritta - €5</li>
-                <li>Polenta fritta - €7</li>
                 <li>Frittelle - €5</li>
             </ul>
         </section>
@@ -356,8 +359,6 @@
                 <li>Prosecco bicchiere - €3</li>
                 <li>Prosecco bottiglia - €8</li>
                 <li>Caffè - €1</li>
-                <li>Cioccolata calda - €3</li>
-                <li>Fanta - €3</li>
             </ul>
         </section>
 
@@ -408,8 +409,8 @@
     </footer>
 
     <!-- Box Informativa -->
-    <div id="informativaBox">
-        <div id="informativaBoxContent">
+    <div id="informativaBox" class="modal">
+        <div class="modal-content">
             <span class="closeBtn" onclick="closeInformativa()">×</span>
             <h2>Informativa</h2>
             <p><strong>Informazioni per gli Ospiti della Taverna dello Sbandieratore</strong></p>
@@ -423,24 +424,34 @@
         </div>
     </div>
 
+    <!-- Box Contatti -->
+    <div id="contattiBox" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn" onclick="closeContatti()">×</span>
+            <h2>Info & Contatti</h2>
+            <ul>
+                <li>Matteo: <a href="tel:+393400659831">3400659831</a></li>
+                <li>Alessandro: <a href="tel:+393346671908">3346671908</a></li>
+                <li>Fabrizio: <a href="tel:+393917501830">3917501830</a></li>
+                <li>Leo: <a href="tel:+393420545787">3420545787</a></li>
+                <li>Email: <a href="mailto:sbandieratoriartena.segr@virgilio.it">sbandieratoriartena.segr@virgilio.it</a></li>
+                <li>Indirizzo Sede: Centro storico zona Santo Stefano, Via Cavour 00031, Artena (RM)</li>
+            </ul>
+        </div>
+    </div>
+
     <script>
         function openInformativa() {
-            const box = document.getElementById('informativaBox');
-            const content = document.getElementById('informativaBoxContent');
-            box.style.display = 'block';
-            setTimeout(() => {
-                content.classList.add('show');
-            }, 50);
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+            document.getElementById('informativaBox').style.display = 'block';
         }
-
         function closeInformativa() {
-            const box = document.getElementById('informativaBox');
-            const content = document.getElementById('informativaBoxContent');
-            content.classList.remove('show');
-            setTimeout(() => {
-                box.style.display = 'none';
-            }, 500);
+            document.getElementById('informativaBox').style.display = 'none';
+        }
+        function openContatti() {
+            document.getElementById('contattiBox').style.display = 'block';
+        }
+        function closeContatti() {
+            document.getElementById('contattiBox').style.display = 'none';
         }
     </script>
 </body>
