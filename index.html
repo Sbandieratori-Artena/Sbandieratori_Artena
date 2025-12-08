@@ -321,6 +321,7 @@
         <a href="#bevande">Bevande</a>
         <a href="#menu-adulti">Menù Adulti</a>
         <a href="#menu-bimbi">Menù Bimbi</a>
+        <a onclick="openAllergeni()">Allergeni</a>
         <a onclick="openInformativa()">Informativa</a>
         <a onclick="openContatti()">Info & Contatti</a>
     </nav>
@@ -427,7 +428,7 @@
         </section>
 
         <section id="menu-bimbi">
-            <h2>Menù Fisso Bimbi</h2>
+            <h2>Menù Bimbi</h2>
             <p>Prezzo: <strong>€12 a bambino</strong></p>
             <ul>
                 <li>Pasta al pomodoro</li>
@@ -436,7 +437,31 @@
                 <li>Acqua 1/2l</li>
             </ul>
         </section>
+        
     </main>
+
+    <!-- Modale ALLERGENI -->
+<div id="allergeniBox" class="modal">
+    <div class="modal-content">
+        <span class="closeBtn" onclick="closeAllergeni()">×</span>
+        <h2>Lista Allergeni</h2>
+        <p>Gli alimenti somministrati possono contenere uno o più dei seguenti allergeni:</p>
+
+        <ul>
+            <li>Glutine</li>
+            <li>Uova e derivati</li>
+            <li>Arachidi e derivati</li>
+            <li>Latte e derivati</li>
+            <li>Frutta a guscio e derivati</li>
+            <li>Sedano e derivati</li>
+            <li>Senape e derivati</li>
+            <li>Semi di sesamo e derivati</li>
+            <li>Lupino e derivati</li>
+        </ul>
+
+        <p style="margin-top:10px;"><strong>Per ulteriori informazioni chiedere al personale volontario della Taverna.</strong></p>
+    </div>
+</div>
 
     <!-- Sezione Social -->
     <section class="social-section">
@@ -505,6 +530,12 @@
     <button onclick="scrollToTop()" id="topBtn" title="Torna in cima">⬆</button>
 
     <script>
+        function openAllergeni() {
+            document.getElementById('allergeniBox').style.display = 'block';
+        }
+        function closeAllergeni() {
+            document.getElementById('allergeniBox').style.display = 'none';
+        }   
         function openInformativa() {
             document.getElementById('informativaBox').style.display = 'block';
         }
@@ -518,12 +549,12 @@
             document.getElementById('contattiBox').style.display = 'none';
         }
 
-        window.onclick = function(event) {
-            const informativa = document.getElementById('informativaBox');
-            const contatti = document.getElementById('contattiBox');
-            if(event.target == informativa) informativa.style.display = "none";
-            if(event.target == contatti) contatti.style.display = "none";
-        }
+       window.onclick = function(event) {
+    ['allergeniBox','informativaBox','contattiBox'].forEach(id => {
+        const box = document.getElementById(id);
+        if(event.target === box) box.style.display = "none";
+    });
+};
         
         // Pulsante torna su
         window.onscroll = function() {scrollFunction()};
@@ -543,6 +574,7 @@
     </script>
 </body>
 </html>
+
 
 
 
