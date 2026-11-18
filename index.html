@@ -4,748 +4,436 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taverna dello Sbandieratore</title>
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
     <style>
-       :root {
-    --bordeaux:   #7a0000;
-    --bordeaux-d: #4d0000;
-    --gold:       #c8a800;
-    --gold-l:     #f0d060;
-    --ivory:      #f7edd8;
-    --parchment:  #efe0bc;
-    --ink:        #1e0e00;
-    --text:       #3a1800;
-    --shadow:     rgba(30,10,0,0.35);
-    --divider: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='600' height='20' viewBox='0 0 600 20'%3E%3Cline x1='0' y1='10' x2='240' y2='10' stroke='%23c8a800' stroke-width='1'/%3E%3Ccircle cx='260' cy='10' r='4' fill='%23c8a800'/%3E%3Ccircle cx='300' cy='10' r='7' fill='none' stroke='%23c8a800' stroke-width='1.5'/%3E%3Ccircle cx='300' cy='10' r='3' fill='%23c8a800'/%3E%3Ccircle cx='340' cy='10' r='4' fill='%23c8a800'/%3E%3Cline x1='360' y1='10' x2='600' y2='10' stroke='%23c8a800' stroke-width='1'/%3E%3C/svg%3E");
-  }
-
-  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
-        
+        /* Stile generale */
         html {
             scroll-behavior: smooth;
         }
 
-         body {
-    font-family: 'Lora', Georgia, serif;
-    background-color: var(--ivory);
-    color: var(--text);
-    min-height: 100vh;
-  }
-        
- /* ── HERO ── */
-  .hero {
-    background-color: var(--bordeaux-d);
-    background-image:
-      radial-gradient(ellipse at 50% 0%, rgba(200,168,0,0.18) 0%, transparent 65%),
-      repeating-linear-gradient(
-        0deg,
-        transparent,
-        transparent 39px,
-        rgba(200,168,0,0.06) 40px
-      );
-    text-align: center;
-    padding: 52px 24px 44px;
-    position: relative;
-    overflow: hidden;
-  }
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #fff5f5;
+            color: #800000;
+        }
 
-  .hero::before {
-    content: '';
-    position: absolute;
-    inset: 0;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Crect width='80' height='80' fill='none'/%3E%3Ccircle cx='40' cy='40' r='1.2' fill='%23c8a800' opacity='0.25'/%3E%3C/svg%3E");
-    pointer-events: none;
-  }
+        header {
+            background-color: #800000;
+            color: #ffd700;
+            text-align: center;
+            padding: 20px 10px;
+            background-image: url('natalizio_sfondo.png');
+            background-size: cover;
+            background-position: center;
+        }
 
-  .hero-logo {
-    width: 100px;
-    height: 100px;
-    object-fit: contain;
-    border: 2px solid var(--gold);
-    border-radius: 12px;
-    margin-bottom: 18px;
-    box-shadow: 0 0 24px rgba(200,168,0,0.5), 0 4px 16px var(--shadow);
-    animation: heroGlow 3s ease-in-out infinite alternate;
-  }
+        header img.logo {
+            max-height: 100px;
+            display: block;
+            margin: 0 auto 10px;
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            box-shadow: 0 0 15px #ffd700, 0 0 30px #fff8dc;
+            animation: sparkle 2s infinite alternate;
+        }
 
-  @keyframes heroGlow {
-    from { box-shadow: 0 0 18px rgba(200,168,0,0.4), 0 4px 16px var(--shadow); }
-    to   { box-shadow: 0 0 36px rgba(200,168,0,0.75), 0 4px 24px var(--shadow); }
-  }
+        @keyframes sparkle {
+            0% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
+            50% { box-shadow: 0 0 20px #ffd700, 0 0 35px #fff8dc; }
+            100% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
+        }
 
-  .hero h1 {
-    font-family: 'Cinzel', serif;
-    font-size: clamp(1.6rem, 4vw, 2.6rem);
-    font-weight: 700;
-    color: var(--gold-l);
-    letter-spacing: 0.04em;
-    text-shadow: 0 2px 8px rgba(0,0,0,0.5);
-    margin-bottom: 8px;
-  }
+        header h1 {
+            margin: 0;
+            font-size: 2em;
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 2px 2px #b8860b;
+        }
 
-  .hero-tagline {
-    font-family: 'Lora', serif;
-    font-style: italic;
-    color: var(--parchment);
-    font-size: 1rem;
-    opacity: 0.85;
-    letter-spacing: 0.03em;
-  }
+        header p {
+            font-family: 'MedievalSharp', cursive;
+            font-size: 1.1em;
+            margin: 5px 0 0 0;
+        }
 
-  /* ── NAV ── */
-  nav {
-    background-color: var(--bordeaux);
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--gold);
-    padding: 0 12px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 2px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
-  }
+        /* Menu di navigazione */
+        nav {
+            background-color: #ff0000;
+            text-align: center;
+            border-bottom: 3px solid #ffd700;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 5px 0;
+        }
 
-  nav a {
-    font-family: 'Cinzel', serif;
-    font-size: 0.72rem;
-    font-weight: 600;
-    color: var(--gold-l);
-    text-decoration: none;
-    padding: 10px 10px;
-    cursor: pointer;
-    letter-spacing: 0.05em;
-    border-bottom: 2px solid transparent;
-    transition: color 0.2s, border-color 0.2s;
-    white-space: nowrap;
-  }
+        nav a {
+            color: #ffd700;
+            text-decoration: none;
+            margin: 5px 10px;
+            font-weight: bold;
+            font-family: 'MedievalSharp', cursive;
+            text-shadow: 1px 1px #800000;
+            font-size: 1em;
+            cursor: pointer;
+            transition: color 0.3s;
+        }
 
-  nav a:hover {
-    color: #fff;
-    border-bottom-color: var(--gold-l);
-  }
+        nav a:hover {
+            color: #fff;
+            text-decoration: underline;
+        }
 
-  /* ── LAYOUT ── */
-  main {
-    max-width: 760px;
-    margin: 0 auto;
-    padding: 32px 20px 56px;
-  }
+        /* Main con sfondo */
+        main {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background-image: url('Sfilata.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
 
-  /* ── SECTION ── */
-  .menu-section {
-    margin-bottom: 48px;
-    scroll-margin-top: 72px;
-  }
+        section {
+            margin-bottom: 40px;
+            background-color: rgba(255, 255, 255, 0.85);
+            padding: 20px 25px;
+            border-radius: 15px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+            scroll-margin-top: 80px;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
 
-  .section-header {
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    margin-bottom: 20px;
-  }
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        }
 
-  .section-header h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.3rem;
-    font-weight: 700;
-    color: var(--bordeaux);
-    letter-spacing: 0.06em;
-    white-space: nowrap;
-  }
+        h2 {
+            color: #800000;
+            font-family: 'MedievalSharp', cursive;
+            border-bottom: 3px solid #ffd700;
+            padding-bottom: 5px;
+            font-size: 1.6em;
+        }
 
-  .section-rule {
-    flex: 1;
-    height: 1px;
-    background: linear-gradient(to right, var(--gold), transparent);
-  }
+        h3 {
+            font-size: 1.3em;
+            margin-top: 15px;
+        }
 
-  .section-ornament {
-    color: var(--gold);
-    font-size: 1rem;
-    line-height: 1;
-  }
+        ul {
+            list-style-type: none;
+            padding: 0;
+        }
 
-  /* ── MENU ITEMS ── */
-  .menu-list {
-    list-style: none;
-    border-top: 1px solid var(--parchment);
-  }
+        li {
+            background-color: #fff8dc;
+            margin: 8px 0;
+            padding: 10px 15px;
+            border-left: 5px solid #ffd700;
+            box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
+            font-size: 1em;
+        }
 
-  .menu-item {
-    display: grid;
-    grid-template-columns: 1fr auto;
-    align-items: baseline;
-    gap: 12px 20px;
-    padding: 13px 0;
-    border-bottom: 1px solid var(--parchment);
-  }
+        footer {
+            text-align: center;
+            background-color: #800000;
+            color: #ffd700;
+            padding: 15px 10px;
+            font-family: 'MedievalSharp', cursive;
+            font-size: 0.9em;
+        }
 
-  .menu-item-name {
-    font-family: 'Lora', serif;
-    font-weight: 500;
-    font-size: 0.98rem;
-    color: var(--ink);
-  }
+        footer p {
+            margin: 5px 0;
+        }
 
-  .menu-item-desc {
-    grid-column: 1;
-    font-style: italic;
-    font-size: 0.82rem;
-    color: #7a5a30;
-    margin-top: 2px;
-    line-height: 1.4;
-  }
+        /* Sezione social */
+        .social-section {
+            text-align: center;
+            padding: 20px;
+            background-color: #fff8dc;
+            border-top: 3px solid #ffd700;
+        }
 
-  .menu-item-price {
-    font-family: 'Cinzel', serif;
-    font-size: 0.88rem;
-    font-weight: 600;
-    color: var(--bordeaux);
-    white-space: nowrap;
-    align-self: start;
-    padding-top: 1px;
-  }
+        .social-section h2 {
+            font-family:'MedievalSharp', cursive;
+            color:#800000;
+            margin-bottom:10px;
+            font-size: 1.5em;
+        }
 
-  .item-note {
-    display: block;
-    font-size: 0.78rem;
-    color: #9a6a30;
-    font-style: italic;
-    margin-top: 10px;
-  }
+        .social-section p {
+            font-family:'Arial', sans-serif;
+            color:#555;
+            margin-bottom:15px;
+            font-size: 1em;
+        }
 
-  /* ── MENU FISSO ── */
-  .menu-box {
-    background-color: var(--bordeaux-d);
-    border: 1px solid var(--gold);
-    border-radius: 10px;
-    padding: 24px 28px;
-    color: var(--ivory);
-    position: relative;
-    overflow: hidden;
-  }
+        .social-buttons {
+            display:flex;
+            justify-content:center;
+            gap:15px;
+            flex-wrap:wrap;
+        }
 
-  .menu-box::before {
-    content: '❧';
-    position: absolute;
-    top: -4px;
-    right: 16px;
-    font-size: 3rem;
-    color: rgba(200,168,0,0.12);
-    pointer-events: none;
-  }
+        .social-buttons a {
+            display:flex;
+            align-items:center;
+            gap:5px;
+            text-decoration:none;
+            color:#fff;
+            padding:8px 15px;
+            border-radius:5px;
+            font-weight:bold;
+            font-size:0.9em;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
 
-  .menu-box-title {
-    font-family: 'Cinzel', serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
-    color: var(--gold);
-    text-transform: uppercase;
-    margin-bottom: 4px;
-  }
+        .social-buttons a:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 10px #ffd700, 0 0 15px #fff8dc;
+        }
 
-  .menu-box-name {
-    font-family: 'Cinzel', serif;
-    font-size: 1.25rem;
-    font-weight: 700;
-    color: var(--gold-l);
-    margin-bottom: 6px;
-  }
+        .instagram { background:#E1306C; }
+        .facebook { background:#1877F2; }
 
-  .menu-box-price {
-    font-family: 'Cinzel', serif;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #fff;
-    margin-bottom: 18px;
-  }
+        .social-buttons img {
+            width:18px;
+            height:18px;
+            filter:invert(1);
+        }
 
-  .menu-box-price span {
-    font-size: 0.85rem;
-    color: var(--parchment);
-    font-weight: 400;
-    font-family: 'Lora', serif;
-    margin-left: 4px;
-  }
+        /* Box modali */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow:auto;
+            background-color: rgba(0,0,0,0.7);
+            padding: 10px;
+            box-sizing: border-box;
+        }
 
-  .menu-box ul {
-    list-style: none;
-    border-top: 1px solid rgba(200,168,0,0.3);
-  }
+        .modal-content {
+            background-color: #fff5f5;
+            margin: 50px auto;
+            padding: 20px;
+            border: 3px solid #ffd700;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0 0 15px #ffd700;
+            position: relative;
+        }
 
-  .menu-box ul li {
-    padding: 8px 0;
-    border-bottom: 1px solid rgba(200,168,0,0.15);
-    font-size: 0.9rem;
-    color: var(--ivory);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
+        .modal-content h2 {
+            text-align: center;
+            color: #800000;
+            margin-bottom: 15px;
+            font-family: 'MedievalSharp', cursive;
+        }
 
-  .menu-box ul li::before {
-    content: '◆';
-    color: var(--gold);
-    font-size: 0.45rem;
-    flex-shrink: 0;
-  }
+        .modal-content p, .modal-content ul {
+            font-size: 1em;
+            line-height: 1.5em;
+            color: #800000;
+        }
 
-  .menu-boxes-grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 20px;
-  }
+        .modal-content ul {
+            padding-left: 20px;
+        }
 
-  @media (max-width: 540px) {
-    .menu-boxes-grid { grid-template-columns: 1fr; }
-  }
+        .modal-content span.closeBtn {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            cursor: pointer;
+            font-size: 1.5em;
+            font-weight: bold;
+        }
 
-  /* ── ORNAMENTAL DIVIDER ── */
-  .ornament-divider {
-    text-align: center;
-    color: var(--gold);
-    font-size: 0.9rem;
-    letter-spacing: 0.5em;
-    margin: 8px 0 32px;
-    opacity: 0.6;
-  }
+        @media (max-width: 600px) {
+            nav a {
+                margin:3px 5px;
+                font-size:0.9em;
+            }
 
-  /* ── MODALE ── */
-  .modal {
-    display: none;
-    position: fixed;
-    inset: 0;
-    z-index: 9000;
-    background: rgba(20,5,0,0.75);
-    backdrop-filter: blur(3px);
-    overflow-y: auto;
-    padding: 24px 16px;
-  }
+            header h1 {
+                font-size:1.8em;
+            }
 
-  .modal.open { display: flex; align-items: flex-start; justify-content: center; }
+            header p {
+                font-size:1em;
+            }
 
-  .modal-panel {
-    background: var(--ivory);
-    border: 2px solid var(--gold);
-    border-radius: 14px;
-    max-width: 640px;
-    width: 100%;
-    padding: 32px 36px 36px;
-    position: relative;
-    box-shadow: 0 8px 40px rgba(0,0,0,0.5);
-    margin: auto;
-  }
+            main {
+                padding: 10px;
+            }
+        }
 
-  .modal-close {
-    position: absolute;
-    top: 14px;
-    right: 18px;
-    background: none;
-    border: none;
-    font-size: 1.3rem;
-    cursor: pointer;
-    color: var(--bordeaux);
-    font-family: 'Cinzel', serif;
-    line-height: 1;
-    padding: 4px 8px;
-    border-radius: 4px;
-    transition: background 0.2s;
-  }
-  .modal-close:hover { background: rgba(122,0,0,0.08); }
-
-  .modal-panel h2 {
-    font-family: 'Cinzel', serif;
-    font-size: 1.35rem;
-    font-weight: 700;
-    color: var(--bordeaux);
-    margin-bottom: 20px;
-    padding-bottom: 10px;
-    border-bottom: 1px solid var(--gold);
-  }
-
-  .modal-panel p {
-    font-size: 0.9rem;
-    line-height: 1.65;
-    color: var(--text);
-    margin-bottom: 12px;
-  }
-
-  .modal-panel h3 {
-    font-family: 'Cinzel', serif;
-    font-size: 0.95rem;
-    color: var(--bordeaux);
-    margin: 20px 0 10px;
-    letter-spacing: 0.04em;
-  }
-
-  .modal-panel ul {
-    list-style: none;
-  }
-
-  .modal-panel ul li {
-    padding: 7px 0;
-    border-bottom: 1px solid var(--parchment);
-    font-size: 0.88rem;
-    color: var(--text);
-    display: flex;
-    align-items: center;
-    gap: 10px;
-  }
-
-  .modal-panel ul li::before {
-    content: '◆';
-    color: var(--gold);
-    font-size: 0.45rem;
-    flex-shrink: 0;
-  }
-
-  .modal-panel a { color: var(--bordeaux); }
-
-  .modal-stem-img {
-    display: block;
-    width: 110px;
-    height: 110px;
-    object-fit: contain;
-    border: 2px solid var(--gold);
-    border-radius: 8px;
-    margin: 0 auto 20px;
-  }
-
-  /* ── SOCIAL ── */
-  .social-band {
-    background-color: var(--bordeaux-d);
-    border-top: 2px solid var(--gold);
-    border-bottom: 2px solid var(--gold);
-    text-align: center;
-    padding: 32px 20px;
-  }
-
-  .social-band h2 {
-    font-family: 'Cinzel', serif;
-    color: var(--gold-l);
-    font-size: 1rem;
-    letter-spacing: 0.06em;
-    margin-bottom: 6px;
-  }
-
-  .social-band p {
-    color: var(--parchment);
-    font-style: italic;
-    font-size: 0.88rem;
-    margin-bottom: 18px;
-    opacity: 0.8;
-  }
-
-  .social-buttons {
-    display: flex;
-    justify-content: center;
-    gap: 14px;
-    flex-wrap: wrap;
-  }
-
-  .social-btn {
-    display: inline-flex;
-    align-items: center;
-    gap: 8px;
-    text-decoration: none;
-    color: #fff;
-    font-family: 'Cinzel', serif;
-    font-size: 0.8rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    padding: 10px 20px;
-    border-radius: 6px;
-    border: 1px solid rgba(255,255,255,0.2);
-    transition: transform 0.2s, box-shadow 0.2s;
-  }
-
-  .social-btn:hover { transform: translateY(-2px); box-shadow: 0 4px 16px rgba(0,0,0,0.3); }
-  .social-btn.ig { background: #C13584; }
-  .social-btn.fb { background: #1877F2; }
-
-  .social-btn img {
-    width: 16px; height: 16px;
-    filter: invert(1);
-  }
-
-  /* ── FOOTER ── */
-  footer {
-    background-color: var(--bordeaux-d);
-    color: var(--parchment);
-    text-align: center;
-    padding: 28px 24px;
-    font-size: 0.8rem;
-    line-height: 1.6;
-  }
-
-  footer strong { color: var(--gold-l); font-family: 'Cinzel', serif; letter-spacing: 0.04em; }
-
-  .footer-legal {
-    margin-top: 10px;
-    font-style: italic;
-    opacity: 0.65;
-    font-size: 0.75rem;
-    max-width: 600px;
-    margin-left: auto;
-    margin-right: auto;
-  }
-
-  /* ── BACK TO TOP ── */
-  #topBtn {
-    display: none;
-    position: fixed;
-    bottom: 28px;
-    right: 24px;
-    z-index: 500;
-    width: 42px; height: 42px;
-    background: var(--bordeaux);
-    color: var(--gold-l);
-    border: 1px solid var(--gold);
-    border-radius: 8px;
-    font-size: 1.1rem;
-    cursor: pointer;
-    box-shadow: 0 4px 14px var(--shadow);
-    transition: background 0.2s;
-  }
-  #topBtn:hover { background: var(--bordeaux-d); }
-
-  @media (max-width: 480px) {
-    .modal-panel { padding: 24px 20px 28px; }
-    nav a { font-size: 0.65rem; padding: 10px 7px; }
-  }
-</style>
+         /* Pulsante Torna in cima */
+        #topBtn {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            z-index: 999;
+            font-size: 18px;
+            border: none;
+            outline: none;
+            background-color: #800000;
+            color: #ffd700;
+            cursor: pointer;
+            padding: 12px 16px;
+            border-radius: 10%;
+            box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
+            transition: background-color 0.3s, transform 0.3s;
+        }
+        #topBtn:hover {
+            background-color: #ff0000;
+            transform: scale(1.1);
+        }
+    </style>
 </head>
 <body>
+    <header>
+        <img src="logo_alfieri.jpeg" alt="Logo del Gruppo" class="logo">
+        <h1>Taverna dello Sbandieratore</h1>
+        <p>Benvenuti alla Taverna dello Sbandieratore!</p>
+    </header>
 
-<!-- HERO -->
-<header class="hero">
-  <img src="logo_alfieri.jpeg" alt="Logo Sbandieratori Alfieri" class="hero-logo">
-  <h1>Taverna dello Sbandieratore</h1>
-  <p class="hero-tagline">Artena · Dicembre · Nella sede degli Sbandieratori Alfieri del Cardinale Borghese</p>
-</header>
+    <nav>
+        <a onclick="openChiSiamo()">Chi siamo</a>
+        <a href="#antipasti">Antipasti</a>
+        <a href="#primi">Primi</a>
+        <a href="#secondi">Secondi</a>
+        <a href="#contorni">Contorni</a>
+        <a href="#fritti">Fritti</a>
+        <a href="#dolci">Dolci</a>
+        <a href="#bevande">Bevande</a>
+        <a href="#menu-adulti">Menù Adulti</a>
+        <a href="#menu-bimbi">Menù Bimbi</a>
+        <a onclick="openAllergeni()">Allergeni</a>
+        <a onclick="openInformativa()">Informativa</a>
+        <a onclick="openContatti()">Info & Contatti</a>
+    </nav>
 
-<!-- NAV -->
-<nav>
-  <a onclick="openModal('chiSiamoBox')">Chi siamo</a>
-  <a href="#antipasti">Antipasti</a>
-  <a href="#primi">Primi</a>
-  <a href="#secondi">Secondi</a>
-  <a href="#contorni">Contorni</a>
-  <a href="#fritti">Fritti</a>
-  <a href="#dolci">Dolci</a>
-  <a href="#bevande">Bevande</a>
-  <a href="#menu-fisso">Menù Fisso</a>
-  <a onclick="openModal('allergeniBox')">Allergeni</a>
-  <a onclick="openModal('informativaBox')">Informativa</a>
-  <a onclick="openModal('contattiBox')">Contatti</a>
-</nav>
+    <main>
+        <!-- Antipasti -->
+        <section id="antipasti">
+            <h2>Antipasti</h2>
+            <ul>
+                <li>Tagliere dello sbandieratore  - €8</li>
+                <li>
+                    Aperitivo - €5
+                     <br><small>Tagliere con stuzzichini + bicchiere a scelta (vino / prosecco / bibita)</small>
+                </li>
+            </ul>
+        </section>
 
-<!-- MAIN MENU -->
-<main>
+        <!-- Primi -->
+        <section id="primi">
+            <h2>Primi Piatti</h2>
+            <ul>
+                <li>Primo del giorno (solo pranzo) - €8</li>
+                <li>Pasta al pomodoro bambini - €6</li>
+            </ul>
+        </section>
 
-  <!-- ANTIPASTI -->
-  <section class="menu-section" id="antipasti">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Antipasti</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Tagliere dello Sbandieratore</span>
-        <span class="menu-item-price">€ 8</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Aperitivo</span>
-        <span class="menu-item-price">€ 5</span>
-        <span class="menu-item-desc">Tagliere con stuzzichini + bicchiere a scelta (vino · prosecco · bibita)</span>
-      </li>
-    </ul>
-  </section>
+        <!-- Secondi -->
+        <section id="secondi">
+            <h2>Secondi Piatti</h2>
+            <ul>
+                <li>Panino salsiccia - €5</li>
+                <li>Panino cotoletta - €5</li>
+                <li>Arrosticini 5pz - €5</li>
+                <li>Grigliata mista di carne - €10</li>
+            </ul>
+        </section>
 
-  <div class="ornament-divider">· · ✦ · ·</div>
+        <!-- Contorni -->
+        <section id="contorni">
+            <h2>Contorni</h2>
+            <ul>
+                <li>Verdura ripassata - €3</li>
+            </ul>
+        </section>
 
-  <!-- PRIMI -->
-  <section class="menu-section" id="primi">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Primi Piatti</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Primo del giorno</span>
-        <span class="menu-item-price">€ 8</span>
-        <span class="menu-item-desc">Solo pranzo</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Pasta al pomodoro bambini</span>
-        <span class="menu-item-price">€ 6</span>
-      </li>
-    </ul>
-  </section>
+        <!-- Fritti -->
+        <section id="fritti">
+            <h2>Fritti</h2>
+            <ul>
+                <li>Patatine fritte* - €3</li>
+                <li>Polenta fritta - €3,50</li>
+                <li>Cartoccio di frittelle miste - €5</li>
+                <li>Frittella Baccalà* - €4</li>
+            </ul>
+            <p style="font-size:0.9em; color:#800000;"><em>*prodotto congelato</em></p>
+        </section>
 
-  <div class="ornament-divider">· · ✦ · ·</div>
+        <!-- Dolci -->
+        <section id="dolci">
+            <h2>Dolci</h2>
+            <ul>
+                <li>
+                    Crepes alla cioccolata - €3,50
+                    <br><small>(a scelta con impasto classico/cacao + cocco/granella  nocciole)</small>
+                </li>
+                <li>Nocchiata 1pz - €2,00</li>
+                <li>
+                    Nocchiata 3pz - 5€
+                    <br><small>(dolce tipico con nocciole,miele e alloro)</small>
+                </li>
+            </ul>
+        </section>
 
-  <!-- SECONDI -->
-  <section class="menu-section" id="secondi">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Secondi Piatti</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Panino salsiccia</span>
-        <span class="menu-item-price">€ 5</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Panino cotoletta</span>
-        <span class="menu-item-price">€ 5</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Arrosticini (5 pz)</span>
-        <span class="menu-item-price">€ 5</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Grigliata mista di carne</span>
-        <span class="menu-item-price">€ 10</span>
-      </li>
-    </ul>
-  </section>
+        <!-- Bevande -->
+        <section id="bevande">
+            <h2>Bevande</h2>
+            <ul>
+                <li>Acqua 1/2lt- €1</li>
+                <li>Vino bicchiere - €1,50</li>
+                <li>Vino bottiglia - €5</li>
+                <li>Coca Cola (lattina) - €2,50</li>
+                <li>Prosecco bicchiere - €2,50</li>
+                <li>Caffè - €1</li>
+                <li>Ginseng - €1,50</li>
+                <li>Cioccolata calda - €2,50</li>
+            </ul>
+        </section>
 
-  <div class="ornament-divider">· · ✦ · ·</div>
+        <!-- Menù -->
+        <section id="menu-adulti">
+            <h2>Menù Fisso Adulti</h2>
+            <p>Prezzo: <strong>€25 a persona</strong></p>
+            <ul>
+                <li>Antipasto</li>
+                <li>Primo del giorno</li>
+                <li>Grigliata</li>
+                <li>Verdura o patatine</li>
+                <li>Acqua 1/2l o bicchiere di vino</li>
+                
+            </ul>
+        </section>
 
-  <!-- CONTORNI -->
-  <section class="menu-section" id="contorni">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Contorni</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Verdura ripassata</span>
-        <span class="menu-item-price">€ 3</span>
-      </li>
-    </ul>
-  </section>
-
-  <div class="ornament-divider">· · ✦ · ·</div>
-
-  <!-- FRITTI -->
-  <section class="menu-section" id="fritti">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Fritti</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Patatine fritte <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
-        <span class="menu-item-price">€ 3</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Polenta fritta</span>
-        <span class="menu-item-price">€ 3,50</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Cartoccio di frittelle miste</span>
-        <span class="menu-item-price">€ 5</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Frittella di Baccalà <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
-        <span class="menu-item-price">€ 4</span>
-      </li>
-    </ul>
-    <span class="item-note">* prodotto congelato</span>
-  </section>
-
-  <div class="ornament-divider">· · ✦ · ·</div>
-
-  <!-- DOLCI -->
-  <section class="menu-section" id="dolci">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Dolci</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item">
-        <span class="menu-item-name">Crepes alla cioccolata</span>
-        <span class="menu-item-price">€ 3,50</span>
-        <span class="menu-item-desc">A scelta con impasto classico o cacao, con cocco o granella di nocciole</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Nocchiata (1 pz)</span>
-        <span class="menu-item-price">€ 2</span>
-      </li>
-      <li class="menu-item">
-        <span class="menu-item-name">Nocchiata (3 pz)</span>
-        <span class="menu-item-price">€ 5</span>
-        <span class="menu-item-desc">Dolce tipico con nocciole, miele e alloro</span>
-      </li>
-    </ul>
-  </section>
-
-  <div class="ornament-divider">· · ✦ · ·</div>
-
-  <!-- BEVANDE -->
-  <section class="menu-section" id="bevande">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Bevande</h2>
-      <div class="section-rule"></div>
-    </div>
-    <ul class="menu-list">
-      <li class="menu-item"><span class="menu-item-name">Acqua ½ lt</span><span class="menu-item-price">€ 1</span></li>
-      <li class="menu-item"><span class="menu-item-name">Vino — bicchiere</span><span class="menu-item-price">€ 1,50</span></li>
-      <li class="menu-item"><span class="menu-item-name">Vino — bottiglia</span><span class="menu-item-price">€ 5</span></li>
-      <li class="menu-item"><span class="menu-item-name">Coca Cola (lattina)</span><span class="menu-item-price">€ 2,50</span></li>
-      <li class="menu-item"><span class="menu-item-name">Prosecco — bicchiere</span><span class="menu-item-price">€ 2,50</span></li>
-      <li class="menu-item"><span class="menu-item-name">Caffè</span><span class="menu-item-price">€ 1</span></li>
-      <li class="menu-item"><span class="menu-item-name">Ginseng</span><span class="menu-item-price">€ 1,50</span></li>
-      <li class="menu-item"><span class="menu-item-name">Cioccolata calda</span><span class="menu-item-price">€ 2,50</span></li>
-    </ul>
-  </section>
-
-  <div class="ornament-divider">· · ✦ · ·</div>
-
-  <!-- MENU FISSO -->
-  <section class="menu-section" id="menu-fisso">
-    <div class="section-header">
-      <span class="section-ornament">⚜</span>
-      <h2>Menù Fisso</h2>
-      <div class="section-rule"></div>
-    </div>
-    <div class="menu-boxes-grid">
-      <div class="menu-box">
-        <p class="menu-box-title">Per adulti</p>
-        <p class="menu-box-name">Menù Completo</p>
-        <p class="menu-box-price">€ 25 <span>a persona</span></p>
-        <ul>
-          <li>Antipasto</li>
-          <li>Primo del giorno</li>
-          <li>Grigliata mista</li>
-          <li>Verdura o patatine</li>
-          <li>Acqua ½ lt o vino (bicchiere)</li>
-        </ul>
-      </div>
-      <div class="menu-box">
-        <p class="menu-box-title">Per bambini</p>
-        <p class="menu-box-name">Menù Bimbi</p>
-        <p class="menu-box-price">€ 10 <span>a bambino</span></p>
-        <ul>
-          <li>Pasta al pomodoro</li>
-          <li>Cotoletta con patatine</li>
-          <li>Acqua ½ lt</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+        <section id="menu-bimbi">
+            <h2>Menù Bimbi</h2>
+            <p>Prezzo: <strong>€10 a bambino</strong></p>
+            <ul>
+                <li>Pasta al pomodoro</li>
+                <li>Cotoletta con patatine</li>
+                <li>Acqua 1/2l</li>
+            </ul>
+        </section>
         
     </main>
 
@@ -787,7 +475,7 @@
     </section>
 
     <footer>
-        <p>&copy; 2026 Taverna dello Sbandieratore - Buon Natale a tutti!</p>
+        <p>&copy; 2025 Taverna dello Sbandieratore - Buon Natale a tutti!</p>
         <p style="font-size:0.85em; margin-top:5px;">
             • Contributo libero su importo consigliato. Gli importi indicati non costituiscono corrispettivo obbligatorio ma donazione volontaria. L’associazione rilascia ricevuta di erogazione liberale per ogni contributo.
         </p>
@@ -908,7 +596,6 @@
     </script>
 </body>
 </html>
-
 
 
 
