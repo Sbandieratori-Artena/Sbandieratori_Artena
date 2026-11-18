@@ -4,144 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Taverna dello Sbandieratore</title>
-    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=MedievalSharp&family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
     <style>
-        /* Stile generale */
-        html {
-            scroll-behavior: smooth;
+
+        /* ── VARIABILI COLORE ── */
+        :root {
+            --bordeaux:   #7a0000;
+            --bordeaux-d: #4d0000;
+            --gold:       #c8a800;
+            --gold-l:     #f0d060;
+            --ivory:      #f7edd8;
+            --parchment:  #efe0bc;
+            --ink:        #1e0e00;
         }
-/* ── FONT MENU ── */
-@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Lora:ital,wght@0,400;0,500;1,400&display=swap');
 
-/* ── VARIABILI COLORE ── */
-:root {
-  --bordeaux:   #7a0000;
-  --bordeaux-d: #4d0000;
-  --gold:       #c8a800;
-  --gold-l:     #f0d060;
-  --ivory:      #f7edd8;
-  --parchment:  #efe0bc;
-  --ink:        #1e0e00;
-  --text:       #3a1800;
-}
+        /* ── STILE GENERALE ── */
+        html { scroll-behavior: smooth; }
 
-/* ── INTESTAZIONE SEZIONE ── */
-.section-header {
-  display: flex;
-  align-items: center;
-  gap: 14px;
-  margin-bottom: 20px;
-}
-.section-header h2 {
-  font-family: 'Cinzel', serif;
-  font-size: 1.3rem;
-  font-weight: 700;
-  color: var(--bordeaux);
-  letter-spacing: 0.06em;
-  white-space: nowrap;
-  border-bottom: none;
-  padding-bottom: 0;
-}
-.section-rule {
-  flex: 1;
-  height: 1px;
-  background: linear-gradient(to right, #c8a800, transparent);
-}
-.section-ornament {
-  color: #c8a800;
-  font-size: 1rem;
-}
-
-/* ── VOCI MENU ── */
-.menu-list {
-  list-style: none;
-  padding: 0;
-  border-top: 1px solid #efe0bc;
-}
-.menu-item {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  align-items: baseline;
-  gap: 4px 20px;
-  padding: 13px 0;
-  border-bottom: 1px solid #efe0bc;
-  background: none;
-  box-shadow: none;
-  border-left: none;
-  margin: 0;
-}
-.menu-item-name {
-  font-family: 'Lora', serif;
-  font-weight: 500;
-  font-size: 0.98rem;
-  color: #1e0e00;
-}
-.menu-item-desc {
-  grid-column: 1;
-  font-style: italic;
-  font-size: 0.82rem;
-  color: #7a5a30;
-  margin-top: 2px;
-  line-height: 1.4;
-}
-.menu-item-price {
-  font-family: 'Cinzel', serif;
-  font-size: 0.88rem;
-  font-weight: 600;
-  color: #7a0000;
-  white-space: nowrap;
-}
-.item-note {
-  display: block;
-  font-size: 0.78rem;
-  color: #9a6a30;
-  font-style: italic;
-  margin-top: 10px;
-}
-
-/* ── DIVISORE TRA SEZIONI ── */
-.ornament-divider {
-  text-align: center;
-  color: #c8a800;
-  font-size: 0.9rem;
-  letter-spacing: 0.5em;
-  margin: 8px 0 32px;
-  opacity: 0.6;
-}
-
-/* ── CARD MENU FISSO ── */
-.menu-boxes-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 20px;
-}
-.menu-box {
-  background-color: #4d0000;
-  border: 1px solid #c8a800;
-  border-radius: 10px;
-  padding: 24px 28px;
-  color: #f7edd8;
-}
-.menu-box-title {
-  font-family: 'Cinzel', serif;
-  font-size: 0.75rem;
-  letter-spacing: 0.12em;
-  color: #c8a800;
-  text-transform: uppercase;
-  margin-bottom: 4px;
-}
-.menu-box-name {
-  font-family: 'Cinzel', serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  color: #f0d060;
-  margin-bottom: 6px;
-}
-.menu-box-price {
-  font-family: 'Cinzel', serif;
-  font-size: 1.5rem;
-  font-weight: 700;
-  color: #fff;
         body {
             font-family: 'Arial', sans-serif;
             margin: 0;
@@ -150,6 +29,7 @@
             color: #800000;
         }
 
+        /* ── HEADER ── */
         header {
             background-color: #800000;
             color: #ffd700;
@@ -171,8 +51,8 @@
         }
 
         @keyframes sparkle {
-            0% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
-            50% { box-shadow: 0 0 20px #ffd700, 0 0 35px #fff8dc; }
+            0%   { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
+            50%  { box-shadow: 0 0 20px #ffd700, 0 0 35px #fff8dc; }
             100% { box-shadow: 0 0 10px #ffd700, 0 0 20px #fff8dc; }
         }
 
@@ -189,7 +69,7 @@
             margin: 5px 0 0 0;
         }
 
-        /* Menu di navigazione */
+        /* ── NAVIGAZIONE ── */
         nav {
             background-color: #ff0000;
             text-align: center;
@@ -217,7 +97,7 @@
             text-decoration: underline;
         }
 
-        /* Main con sfondo */
+        /* ── MAIN CON SFONDO ── */
         main {
             max-width: 900px;
             margin: 20px auto;
@@ -231,46 +111,188 @@
 
         section {
             margin-bottom: 40px;
-            background-color: rgba(255, 255, 255, 0.85);
+            background-color: rgba(255, 255, 255, 0.88);
             padding: 20px 25px;
             border-radius: 15px;
             box-shadow: 0 8px 20px rgba(0,0,0,0.25);
             scroll-margin-top: 80px;
-            transition: transform 0.3s, box-shadow 0.3s;
         }
 
-        section:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 12px 25px rgba(0,0,0,0.3);
+        /* ── INTESTAZIONE SEZIONE (nuovo stile menu) ── */
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            margin-bottom: 20px;
         }
 
-        h2 {
-            color: #800000;
-            font-family: 'MedievalSharp', cursive;
-            border-bottom: 3px solid #ffd700;
-            padding-bottom: 5px;
-            font-size: 1.6em;
+        .section-header h2 {
+            font-family: 'Cinzel', serif;
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--bordeaux);
+            letter-spacing: 0.06em;
+            white-space: nowrap;
+            border-bottom: none;
+            padding-bottom: 0;
+            margin: 0;
         }
 
-        h3 {
-            font-size: 1.3em;
-            margin-top: 15px;
+        .section-rule {
+            flex: 1;
+            height: 1px;
+            background: linear-gradient(to right, #c8a800, transparent);
         }
 
-        ul {
-            list-style-type: none;
+        .section-ornament {
+            color: #c8a800;
+            font-size: 1rem;
+        }
+
+        /* ── VOCI MENU ── */
+        .menu-list {
+            list-style: none;
             padding: 0;
+            margin: 0;
+            border-top: 1px solid #efe0bc;
         }
 
-        li {
-            background-color: #fff8dc;
-            margin: 8px 0;
-            padding: 10px 15px;
-            border-left: 5px solid #ffd700;
-            box-shadow: 2px 2px 6px rgba(0,0,0,0.15);
-            font-size: 1em;
+        .menu-item {
+            display: grid;
+            grid-template-columns: 1fr auto;
+            align-items: baseline;
+            gap: 4px 20px;
+            padding: 13px 0;
+            border-bottom: 1px solid #efe0bc;
+            background: none;
+            box-shadow: none;
+            border-left: none;
+            margin: 0;
         }
 
+        .menu-item-name {
+            font-family: 'Lora', serif;
+            font-weight: 500;
+            font-size: 0.98rem;
+            color: #1e0e00;
+        }
+
+        .menu-item-desc {
+            grid-column: 1;
+            font-style: italic;
+            font-size: 0.82rem;
+            color: #7a5a30;
+            margin-top: 2px;
+            line-height: 1.4;
+        }
+
+        .menu-item-price {
+            font-family: 'Cinzel', serif;
+            font-size: 0.88rem;
+            font-weight: 600;
+            color: #7a0000;
+            white-space: nowrap;
+        }
+
+        .item-note {
+            display: block;
+            font-size: 0.78rem;
+            color: #9a6a30;
+            font-style: italic;
+            margin-top: 10px;
+        }
+
+        /* ── DIVISORE ORNAMENTALE ── */
+        .ornament-divider {
+            text-align: center;
+            color: #c8a800;
+            font-size: 0.9rem;
+            letter-spacing: 0.5em;
+            margin: 8px 0 32px;
+            opacity: 0.6;
+        }
+
+        /* ── CARD MENU FISSO ── */
+        .menu-boxes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .menu-box {
+            background-color: #4d0000;
+            border: 1px solid #c8a800;
+            border-radius: 10px;
+            padding: 24px 28px;
+            color: #f7edd8;
+        }
+
+        .menu-box-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: #c8a800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .menu-box-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f0d060;
+            margin-bottom: 6px;
+        }
+
+        .menu-box-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .menu-box-price span {
+            font-size: 0.85rem;
+            color: #efe0bc;
+            font-weight: 400;
+            font-family: 'Lora', serif;
+            margin-left: 4px;
+        }
+
+        .menu-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid rgba(200,168,0,0.3);
+        }
+
+        .menu-box ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(200,168,0,0.15);
+            font-size: 0.9rem;
+            color: #f7edd8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            box-shadow: none;
+            border-left: none;
+            margin: 0;
+        }
+
+        .menu-box ul li::before {
+            content: '◆';
+            color: #c8a800;
+            font-size: 0.45rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 540px) {
+            .menu-boxes-grid { grid-template-columns: 1fr; }
+        }
+
+        /* ── FOOTER ── */
         footer {
             text-align: center;
             background-color: #800000;
@@ -280,11 +302,9 @@
             font-size: 0.9em;
         }
 
-        footer p {
-            margin: 5px 0;
-        }
+        footer p { margin: 5px 0; }
 
-        /* Sezione social */
+        /* ── SOCIAL ── */
         .social-section {
             text-align: center;
             padding: 20px;
@@ -293,36 +313,36 @@
         }
 
         .social-section h2 {
-            font-family:'MedievalSharp', cursive;
-            color:#800000;
-            margin-bottom:10px;
+            font-family: 'MedievalSharp', cursive;
+            color: #800000;
+            margin-bottom: 10px;
             font-size: 1.5em;
         }
 
         .social-section p {
-            font-family:'Arial', sans-serif;
-            color:#555;
-            margin-bottom:15px;
+            font-family: 'Arial', sans-serif;
+            color: #555;
+            margin-bottom: 15px;
             font-size: 1em;
         }
 
         .social-buttons {
-            display:flex;
-            justify-content:center;
-            gap:15px;
-            flex-wrap:wrap;
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            flex-wrap: wrap;
         }
 
         .social-buttons a {
-            display:flex;
-            align-items:center;
-            gap:5px;
-            text-decoration:none;
-            color:#fff;
-            padding:8px 15px;
-            border-radius:5px;
-            font-weight:bold;
-            font-size:0.9em;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            color: #fff;
+            padding: 8px 15px;
+            border-radius: 5px;
+            font-weight: bold;
+            font-size: 0.9em;
             transition: transform 0.2s, box-shadow 0.2s;
         }
 
@@ -331,16 +351,16 @@
             box-shadow: 0 0 10px #ffd700, 0 0 15px #fff8dc;
         }
 
-        .instagram { background:#E1306C; }
-        .facebook { background:#1877F2; }
+        .instagram { background: #E1306C; }
+        .facebook  { background: #1877F2; }
 
         .social-buttons img {
-            width:18px;
-            height:18px;
-            filter:invert(1);
+            width: 18px;
+            height: 18px;
+            filter: invert(1);
         }
 
-        /* Box modali */
+        /* ── MODALI ── */
         .modal {
             display: none;
             position: fixed;
@@ -349,7 +369,7 @@
             top: 0;
             width: 100%;
             height: 100%;
-            overflow:auto;
+            overflow: auto;
             background-color: rgba(0,0,0,0.7);
             padding: 10px;
             box-sizing: border-box;
@@ -373,15 +393,14 @@
             font-family: 'MedievalSharp', cursive;
         }
 
-        .modal-content p, .modal-content ul {
+        .modal-content p,
+        .modal-content ul {
             font-size: 1em;
             line-height: 1.5em;
             color: #800000;
         }
 
-        .modal-content ul {
-            padding-left: 20px;
-        }
+        .modal-content ul { padding-left: 20px; }
 
         .modal-content span.closeBtn {
             position: absolute;
@@ -392,26 +411,7 @@
             font-weight: bold;
         }
 
-        @media (max-width: 600px) {
-            nav a {
-                margin:3px 5px;
-                font-size:0.9em;
-            }
-
-            header h1 {
-                font-size:1.8em;
-            }
-
-            header p {
-                font-size:1em;
-            }
-
-            main {
-                padding: 10px;
-            }
-        }
-
-         /* Pulsante Torna in cima */
+        /* ── PULSANTE TORNA SU ── */
         #topBtn {
             display: none;
             position: fixed;
@@ -429,13 +429,24 @@
             box-shadow: 2px 2px 8px rgba(0,0,0,0.4);
             transition: background-color 0.3s, transform 0.3s;
         }
+
         #topBtn:hover {
             background-color: #ff0000;
             transform: scale(1.1);
         }
+
+        /* ── RESPONSIVE ── */
+        @media (max-width: 600px) {
+            nav a       { margin: 3px 5px; font-size: 0.9em; }
+            header h1   { font-size: 1.8em; }
+            header p    { font-size: 1em; }
+            main        { padding: 10px; }
+        }
+
     </style>
 </head>
 <body>
+
     <header>
         <img src="logo_alfieri.jpeg" alt="Logo del Gruppo" class="logo">
         <h1>Taverna dello Sbandieratore</h1>
@@ -459,230 +470,230 @@
     </nav>
 
     <main>
+
         <!-- ANTIPASTI -->
-<section id="antipasti">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Antipasti</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Tagliere dello Sbandieratore</span>
-      <span class="menu-item-price">€ 8</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Aperitivo</span>
-      <span class="menu-item-price">€ 5</span>
-      <span class="menu-item-desc">Tagliere con stuzzichini + bicchiere a scelta (vino · prosecco · bibita)</span>
-    </li>
-  </ul>
-</section>
+        <section id="antipasti">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Antipasti</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Tagliere dello Sbandieratore</span>
+                    <span class="menu-item-price">€ 8</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Aperitivo</span>
+                    <span class="menu-item-price">€ 5</span>
+                    <span class="menu-item-desc">Tagliere con stuzzichini + bicchiere a scelta (vino · prosecco · bibita)</span>
+                </li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- PRIMI -->
-<section id="primi">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Primi Piatti</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Primo del giorno</span>
-      <span class="menu-item-price">€ 8</span>
-      <span class="menu-item-desc">Solo pranzo</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Pasta al pomodoro bambini</span>
-      <span class="menu-item-price">€ 6</span>
-    </li>
-  </ul>
-</section>
+        <!-- PRIMI -->
+        <section id="primi">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Primi Piatti</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Primo del giorno</span>
+                    <span class="menu-item-price">€ 8</span>
+                    <span class="menu-item-desc">Solo pranzo</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Pasta al pomodoro bambini</span>
+                    <span class="menu-item-price">€ 6</span>
+                </li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- SECONDI -->
-<section id="secondi">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Secondi Piatti</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Panino salsiccia</span>
-      <span class="menu-item-price">€ 5</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Panino cotoletta</span>
-      <span class="menu-item-price">€ 5</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Arrosticini (5 pz)</span>
-      <span class="menu-item-price">€ 5</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Grigliata mista di carne</span>
-      <span class="menu-item-price">€ 10</span>
-    </li>
-  </ul>
-</section>
+        <!-- SECONDI -->
+        <section id="secondi">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Secondi Piatti</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Panino salsiccia</span>
+                    <span class="menu-item-price">€ 5</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Panino cotoletta</span>
+                    <span class="menu-item-price">€ 5</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Arrosticini (5 pz)</span>
+                    <span class="menu-item-price">€ 5</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Grigliata mista di carne</span>
+                    <span class="menu-item-price">€ 10</span>
+                </li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- CONTORNI -->
-<section id="contorni">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Contorni</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Verdura ripassata</span>
-      <span class="menu-item-price">€ 3</span>
-    </li>
-  </ul>
-</section>
+        <!-- CONTORNI -->
+        <section id="contorni">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Contorni</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Verdura ripassata</span>
+                    <span class="menu-item-price">€ 3</span>
+                </li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- FRITTI -->
-<section id="fritti">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Fritti</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Patatine fritte <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
-      <span class="menu-item-price">€ 3</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Polenta fritta</span>
-      <span class="menu-item-price">€ 3,50</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Cartoccio di frittelle miste</span>
-      <span class="menu-item-price">€ 5</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Frittella di Baccalà <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
-      <span class="menu-item-price">€ 4</span>
-    </li>
-  </ul>
-  <span class="item-note">* prodotto congelato</span>
-</section>
+        <!-- FRITTI -->
+        <section id="fritti">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Fritti</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Patatine fritte <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
+                    <span class="menu-item-price">€ 3</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Polenta fritta</span>
+                    <span class="menu-item-price">€ 3,50</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Cartoccio di frittelle miste</span>
+                    <span class="menu-item-price">€ 5</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Frittella di Baccalà <em style="font-size:0.78rem;color:#9a6a30;">*</em></span>
+                    <span class="menu-item-price">€ 4</span>
+                </li>
+            </ul>
+            <span class="item-note">* prodotto congelato</span>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- DOLCI -->
-<section id="dolci">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Dolci</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item">
-      <span class="menu-item-name">Crepes alla cioccolata</span>
-      <span class="menu-item-price">€ 3,50</span>
-      <span class="menu-item-desc">A scelta con impasto classico o cacao, con cocco o granella di nocciole</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Nocchiata (1 pz)</span>
-      <span class="menu-item-price">€ 2</span>
-    </li>
-    <li class="menu-item">
-      <span class="menu-item-name">Nocchiata (3 pz)</span>
-      <span class="menu-item-price">€ 5</span>
-      <span class="menu-item-desc">Dolce tipico con nocciole, miele e alloro</span>
-    </li>
-  </ul>
-</section>
+        <!-- DOLCI -->
+        <section id="dolci">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Dolci</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item">
+                    <span class="menu-item-name">Crepes alla cioccolata</span>
+                    <span class="menu-item-price">€ 3,50</span>
+                    <span class="menu-item-desc">A scelta con impasto classico o cacao, con cocco o granella di nocciole</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Nocchiata (1 pz)</span>
+                    <span class="menu-item-price">€ 2</span>
+                </li>
+                <li class="menu-item">
+                    <span class="menu-item-name">Nocchiata (3 pz)</span>
+                    <span class="menu-item-price">€ 5</span>
+                    <span class="menu-item-desc">Dolce tipico con nocciole, miele e alloro</span>
+                </li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- BEVANDE -->
-<section id="bevande">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Bevande</h2>
-    <div class="section-rule"></div>
-  </div>
-  <ul class="menu-list">
-    <li class="menu-item"><span class="menu-item-name">Acqua ½ lt</span><span class="menu-item-price">€ 1</span></li>
-    <li class="menu-item"><span class="menu-item-name">Vino — bicchiere</span><span class="menu-item-price">€ 1,50</span></li>
-    <li class="menu-item"><span class="menu-item-name">Vino — bottiglia</span><span class="menu-item-price">€ 5</span></li>
-    <li class="menu-item"><span class="menu-item-name">Coca Cola (lattina)</span><span class="menu-item-price">€ 2,50</span></li>
-    <li class="menu-item"><span class="menu-item-name">Prosecco — bicchiere</span><span class="menu-item-price">€ 2,50</span></li>
-    <li class="menu-item"><span class="menu-item-name">Caffè</span><span class="menu-item-price">€ 1</span></li>
-    <li class="menu-item"><span class="menu-item-name">Ginseng</span><span class="menu-item-price">€ 1,50</span></li>
-    <li class="menu-item"><span class="menu-item-name">Cioccolata calda</span><span class="menu-item-price">€ 2,50</span></li>
-  </ul>
-</section>
+        <!-- BEVANDE -->
+        <section id="bevande">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Bevande</h2>
+                <div class="section-rule"></div>
+            </div>
+            <ul class="menu-list">
+                <li class="menu-item"><span class="menu-item-name">Acqua ½ lt</span><span class="menu-item-price">€ 1</span></li>
+                <li class="menu-item"><span class="menu-item-name">Vino — bicchiere</span><span class="menu-item-price">€ 1,50</span></li>
+                <li class="menu-item"><span class="menu-item-name">Vino — bottiglia</span><span class="menu-item-price">€ 5</span></li>
+                <li class="menu-item"><span class="menu-item-name">Coca Cola (lattina)</span><span class="menu-item-price">€ 2,50</span></li>
+                <li class="menu-item"><span class="menu-item-name">Prosecco — bicchiere</span><span class="menu-item-price">€ 2,50</span></li>
+                <li class="menu-item"><span class="menu-item-name">Caffè</span><span class="menu-item-price">€ 1</span></li>
+                <li class="menu-item"><span class="menu-item-name">Ginseng</span><span class="menu-item-price">€ 1,50</span></li>
+                <li class="menu-item"><span class="menu-item-name">Cioccolata calda</span><span class="menu-item-price">€ 2,50</span></li>
+            </ul>
+        </section>
 
-<div class="ornament-divider">· · ✦ · ·</div>
+        <div class="ornament-divider">· · ✦ · ·</div>
 
-<!-- MENU FISSO -->
-<section id="menu-adulti">
-  <div class="section-header">
-    <span class="section-ornament">⚜</span>
-    <h2>Menù Fisso</h2>
-    <div class="section-rule"></div>
-  </div>
-  <div class="menu-boxes-grid">
-    <div class="menu-box">
-      <p class="menu-box-title">Per adulti</p>
-      <p class="menu-box-name">Menù Completo</p>
-      <p class="menu-box-price">€ 25 <span>a persona</span></p>
-      <ul>
-        <li>Antipasto</li>
-        <li>Primo del giorno</li>
-        <li>Grigliata mista</li>
-        <li>Verdura o patatine</li>
-        <li>Acqua ½ lt o vino (bicchiere)</li>
-      </ul>
-    </div>
-    <div class="menu-box">
-      <p class="menu-box-title">Per bambini</p>
-      <p class="menu-box-name">Menù Bimbi</p>
-      <p class="menu-box-price">€ 10 <span>a bambino</span></p>
-      <ul>
-        <li>Pasta al pomodoro</li>
-        <li>Cotoletta con patatine</li>
-        <li>Acqua ½ lt</li>
-      </ul>
-    </div>
-  </div>
-</section>
+        <!-- MENU FISSO -->
+        <section id="menu-adulti">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Menù Fisso</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="menu-boxes-grid">
+                <div class="menu-box">
+                    <p class="menu-box-title">Per adulti</p>
+                    <p class="menu-box-name">Menù Completo</p>
+                    <p class="menu-box-price">€ 25 <span>a persona</span></p>
+                    <ul>
+                        <li>Antipasto</li>
+                        <li>Primo del giorno</li>
+                        <li>Grigliata mista</li>
+                        <li>Verdura o patatine</li>
+                        <li>Acqua ½ lt o vino (bicchiere)</li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <p class="menu-box-title">Per bambini</p>
+                    <p class="menu-box-name">Menù Bimbi</p>
+                    <p class="menu-box-price">€ 10 <span>a bambino</span></p>
+                    <ul>
+                        <li>Pasta al pomodoro</li>
+                        <li>Cotoletta con patatine</li>
+                        <li>Acqua ½ lt</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
     </main>
 
     <!-- Modale ALLERGENI -->
-<div id="allergeniBox" class="modal">
-    <div class="modal-content">
-        <span class="closeBtn" onclick="closeAllergeni()">×</span>
-        <h2>Lista Allergeni</h2>
-        <p>Gli alimenti somministrati possono contenere uno o più dei seguenti allergeni:</p>
-
-        <ul>
-            <li>Glutine</li>
-            <li>Uova e derivati</li>
-            <li>Arachidi e derivati</li>
-            <li>Latte e derivati</li>
-            <li>Frutta a guscio e derivati</li>
-            <li>Sedano e derivati</li>
-            <li>Senape e derivati</li>
-            <li>Semi di sesamo e derivati</li>
-            <li>Lupino e derivati</li>
-        </ul>
-
-        <p style="margin-top:10px;"><strong>Per ulteriori informazioni chiedere al personale volontario della Taverna.</strong></p>
+    <div id="allergeniBox" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn" onclick="closeAllergeni()">×</span>
+            <h2>Lista Allergeni</h2>
+            <p>Gli alimenti somministrati possono contenere uno o più dei seguenti allergeni:</p>
+            <ul>
+                <li>Glutine</li>
+                <li>Uova e derivati</li>
+                <li>Arachidi e derivati</li>
+                <li>Latte e derivati</li>
+                <li>Frutta a guscio e derivati</li>
+                <li>Sedano e derivati</li>
+                <li>Senape e derivati</li>
+                <li>Semi di sesamo e derivati</li>
+                <li>Lupino e derivati</li>
+            </ul>
+            <p style="margin-top:10px;"><strong>Per ulteriori informazioni chiedere al personale volontario della Taverna.</strong></p>
+        </div>
     </div>
-</div>
 
     <!-- Sezione Social -->
     <section class="social-section">
@@ -701,7 +712,7 @@
     <footer>
         <p>&copy; 2026 Taverna dello Sbandieratore - Buon Natale a tutti!</p>
         <p style="font-size:0.85em; margin-top:5px;">
-            • Contributo libero su importo consigliato. Gli importi indicati non costituiscono corrispettivo obbligatorio ma donazione volontaria. L’associazione rilascia ricevuta di erogazione liberale per ogni contributo.
+            • Contributo libero su importo consigliato. Gli importi indicati non costituiscono corrispettivo obbligatorio ma donazione volontaria. L'associazione rilascia ricevuta di erogazione liberale per ogni contributo.
         </p>
     </footer>
 
@@ -709,23 +720,20 @@
     <button onclick="topFunction()" id="topBtn" title="Torna su">↑</button>
 
     <!-- Box Chi Siamo -->
-<div id="chiSiamoBox" class="modal">
-    <div class="modal-content">
-        <span class="closeBtn" onclick="closeChiSiamo()">×</span>
-        <h2>Chi siamo</h2>
-
-        <!-- Stemma -->
-        <div style="text-align:center; margin-bottom:15px;">
-            <img src="stemma.jpg" alt="Stemma Associazione" style="max-width:150px; border:3px solid #ffd700; border-radius:10px;">
+    <div id="chiSiamoBox" class="modal">
+        <div class="modal-content">
+            <span class="closeBtn" onclick="closeChiSiamo()">×</span>
+            <h2>Chi siamo</h2>
+            <div style="text-align:center; margin-bottom:15px;">
+                <img src="stemma.jpg" alt="Stemma Associazione" style="max-width:150px; border:3px solid #ffd700; border-radius:10px;">
+            </div>
+            <p>L'associazione Sbandieratori e Musici Alfieri del Cardinale Borghese nasce con sede ad Artena, città a circa 40 km a sud di Roma storicamente sempre legata agli avvenimenti che hanno interessato la Capitale sin dalla sua nascita e le vicende delle famiglie nobiliari che di essa ne hanno scritta la storia.</p>
+            <p>Il periodo storico di riferimento per il gruppo è la prima metà del 1600, in modo particolare il 1614 anno in cui il Cardinale Scipione Borghese, nipote di Papa Paolo V Borghese acquista il feudo di Artena, allora chiamato Montefortino.</p>
+            <p>Lo stemma del gruppo ricalca lo stemma araldico della famiglia Borghese con l'Aquila e il Drago rampanti inseriti su uno scudo di tipo Francese Antico Troncato di colori Bianco e Rosso. Sul nastro posizionato inferiormente vi è il motto della città di Artena "Ex Cinere Resurgo" - Risorgo dalle ceneri.</p>
+            <p>L'associazione, composta da circa 60 soci attivi, prende parte con impegno ai campionati italiani di Bandiera, distinguendosi con numerosi piazzamenti a podio nelle specialità di singolo e coppia.</p>
+            <p>L'associazione partecipa alle più importanti manifestazioni folcloristiche e culturali della Provincia di Roma e del Lazio ed è parte integrante del grande corteo storico del Palio di Artena che si tiene annualmente ad agosto.</p>
         </div>
-        
-        <p>L’associazione Sbandieratori e Musici Alfieri del Cardinale Borghese nasce con sede ad Artena, città a circa 40 km a sud di Roma storicamente sempre legata agli avvenimenti che hanno interessato la Capitale sin dalla sua nascita e le vicende delle famiglie nobiliari che di essa ne hanno scritta la storia.</p>
-        <p>Il periodo storico di riferimento per il gruppo è la prima metà del 1600, in modo particolare il 1614 anno in cui il Cardinale Scipione Borghese, nipote di Papa Paolo V Borghese acquista il feudo di Artena, allora chiamato Montefortino.</p>
-        <p>Lo stemma del gruppo ricalca lo stemma araldico della famiglia Borghese con l’Aquila e il Drago rampanti inseriti su uno scudo di tipo Francese Antico Troncato di colori Bianco e Rosso. Sul nastro posizionato inferiormente vi è il motto della città di Artena “Ex Cinere Resurgo”- Risorgo dalle ceneri.</p>
-        <p>L’associazione, composta da circa 60 soci attivi, prende parte con impegno ai campionati italiani di Bandiera, distinguendosi con numerosi piazzamenti a podio nelle specialità di singolo e coppia.</p>
-        <p>L'associazione partecipa alle più importanti manifestazioni folcloristiche e culturali della Provincia di Roma e del Lazio ed è parte integrante del grande corteo storico del Palio di Artena che si tiene annualmente ad agosto.</p>
     </div>
-</div>
 
     <!-- Box Informativa -->
     <div id="informativaBox" class="modal">
@@ -733,12 +741,11 @@
             <span class="closeBtn" onclick="closeInformativa()">×</span>
             <h2>Informativa</h2>
             <p><strong>Informazioni per gli Ospiti della Taverna dello Sbandieratore</strong></p>
-            <p>Durante il periodo dell’evento cittadino “Artena Città Presepe” (8 dicembre – 6 gennaio), la nostra Associazione di Promozione Sociale mette a disposizione la propria sede operativa trasformandola, per tradizione, nella Taverna dello Sbandieratore. Questa iniziativa è resa possibile grazie all’impegno esclusivo dei volontari, che prestano gratuitamente la propria opera per sostenere le finalità istituzionali dell’associazione.</p>
-            <p>L’attività di somministrazione di cibo e bevande proposta in questi giorni non ha carattere commerciale, ma rientra tra le iniziative occasionali di raccolta fondi previste dalla normativa sul Terzo Settore. Lo scopo principale non è la vendita di prodotti, bensì la creazione di un momento comunitario in cui i partecipanti possono offrire un contributo volontario a sostegno delle attività sportive, storiche e folkloristiche svolte durante tutto l’anno.</p>
-            <p>Per questo motivo, all’interno del menu troverete esclusivamente “prezzi consigliati”. Tali importi non rappresentano un corrispettivo obbligatorio, ma un’indicazione orientativa del contributo suggerito per sostenere le nostre attività. Chiunque può liberamente decidere l’importo da donare, secondo le proprie possibilità.</p>
-            <p>I proventi raccolti durante questo periodo saranno integralmente destinati al sostegno delle nostre attività principali, tra cui l’organizzazione del Festival delle Bandiere, la partecipazione ai campionati nazionali e l’acquisto e la manutenzione del materiale storico dell’associazione.</p>
-            <p>In ottemperanza alle norme vigenti e ai principi di trasparenza che guidano la nostra APS, per ogni donazione viene rilasciata una ricevuta di erogazione liberale, registrata nella contabilità separata dedicata a questa raccolta fondi. Tale ricevuta certifica che il contributo ricevuto non costituisce pagamento di un prezzo, ma una donazione volontaria a favore dell’associazione.</p>
-            <p>Tutte le attività sono gestite con cura, rispetto e responsabilità, nel pieno spirito del volontariato. Vi ringraziamo per il vostro sostegno, per la partecipazione e per l’aiuto concreto che offrite alla crescita culturale e sportiva della nostra realtà associativa.</p>
+            <p>Durante il periodo dell'evento cittadino "Artena Città Presepe" (8 dicembre – 6 gennaio), la nostra Associazione di Promozione Sociale mette a disposizione la propria sede operativa trasformandola, per tradizione, nella Taverna dello Sbandieratore.</p>
+            <p>L'attività di somministrazione di cibo e bevande proposta in questi giorni non ha carattere commerciale, ma rientra tra le iniziative occasionali di raccolta fondi previste dalla normativa sul Terzo Settore.</p>
+            <p>Per questo motivo, all'interno del menu troverete esclusivamente "prezzi consigliati". Tali importi non rappresentano un corrispettivo obbligatorio, ma un'indicazione orientativa del contributo suggerito.</p>
+            <p>I proventi raccolti saranno integralmente destinati al sostegno delle nostre attività principali, tra cui l'organizzazione del Festival delle Bandiere, la partecipazione ai campionati nazionali e l'acquisto e la manutenzione del materiale storico.</p>
+            <p>Per ogni donazione viene rilasciata una ricevuta di erogazione liberale, registrata nella contabilità separata dedicata a questa raccolta fondi.</p>
             <p><strong>Grazie di cuore e buona permanenza presso la Taverna dello Sbandieratore!</strong></p>
         </div>
     </div>
@@ -748,8 +755,6 @@
         <div class="modal-content">
             <span class="closeBtn" onclick="closeContatti()">×</span>
             <h2>Info & Contatti</h2>
-
-            <!-- Responsabili -->
             <h3>Responsabili</h3>
             <ul style="list-style:none; padding:0;">
                 <li style="margin:8px 0;">📞 Matteo: <a href="tel:+393400659831">3400659831</a></li>
@@ -758,79 +763,39 @@
                 <li style="margin:8px 0;">📞 Fabrizio: <a href="tel:+393917501830">3917501830</a></li>
                 <li style="margin:8px 0;">📞 Leo: <a href="tel:+393420545787">3420545787</a></li>
             </ul>
-
-            <!-- Generale -->
             <h3>Informazioni generali</h3>
             <ul style="list-style:none; padding:0;">
                 <li style="margin:8px 0;">✉️ Email: <a href="mailto:sbandieratoriartena.segr@virgilio.it">sbandieratoriartena.segr@virgilio.it</a></li>
                 <li style="margin:8px 0;">📍 Indirizzo: Centro storico zona Santo Stefano, Via Cavour 00031, Artena (RM)</li>
             </ul>
-
- <!-- Pulsante Torna in cima -->
-    <button onclick="scrollToTop()" id="topBtn" title="Torna in cima">⬆</button>
+        </div>
+    </div>
 
     <script>
-        function openChiSiamo() {
-            document.getElementById('chiSiamoBox').style.display = 'block';
-        }
-        function closeChiSiamo() {
-            document.getElementById('chiSiamoBox').style.display = 'none';
-        }
-        function openAllergeni() {
-            document.getElementById('allergeniBox').style.display = 'block';
-        }
-        function closeAllergeni() {
-            document.getElementById('allergeniBox').style.display = 'none';
-        }   
-        function openInformativa() {
-            document.getElementById('informativaBox').style.display = 'block';
-        }
-        function closeInformativa() {
-            document.getElementById('informativaBox').style.display = 'none';
-        }
-        function openContatti() {
-            document.getElementById('contattiBox').style.display = 'block';
-        }
-        function closeContatti() {
-            document.getElementById('contattiBox').style.display = 'none';
-        }
+        function openChiSiamo()    { document.getElementById('chiSiamoBox').style.display = 'block'; }
+        function closeChiSiamo()   { document.getElementById('chiSiamoBox').style.display = 'none'; }
+        function openAllergeni()   { document.getElementById('allergeniBox').style.display = 'block'; }
+        function closeAllergeni()  { document.getElementById('allergeniBox').style.display = 'none'; }
+        function openInformativa() { document.getElementById('informativaBox').style.display = 'block'; }
+        function closeInformativa(){ document.getElementById('informativaBox').style.display = 'none'; }
+        function openContatti()    { document.getElementById('contattiBox').style.display = 'block'; }
+        function closeContatti()   { document.getElementById('contattiBox').style.display = 'none'; }
 
-       window.onclick = function(event) {
-    ['allergeniBox','informativaBox','contattiBox'].forEach(id => {
-        const box = document.getElementById(id);
-        if(event.target === box) box.style.display = "none";
-    });
-};
-        
-        // Pulsante torna su
-        window.onscroll = function() {scrollFunction()};
+        window.onclick = function(event) {
+            ['allergeniBox','informativaBox','contattiBox','chiSiamoBox'].forEach(id => {
+                const box = document.getElementById(id);
+                if (event.target === box) box.style.display = 'none';
+            });
+        };
 
-        function scrollFunction() {
-            const topBtn = document.getElementById("topBtn");
-            if (window.scrollY > 200) {
-                topBtn.style.display = "block";
-            } else {
-                topBtn.style.display = "none";
-            }
-        }
+        window.onscroll = function() {
+            document.getElementById('topBtn').style.display = window.scrollY > 200 ? 'block' : 'none';
+        };
 
         function topFunction() {
-            window.scrollTo({top: 0, behavior: 'smooth'});
+            window.scrollTo({ top: 0, behavior: 'smooth' });
         }
     </script>
+
 </body>
 </html>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
