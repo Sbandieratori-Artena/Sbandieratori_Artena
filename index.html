@@ -70,6 +70,24 @@
         }
 
         /* ── NAVIGAZIONE ── */
+        /* ── ELIMINA FLASH CELESTE AL TAP ── */
+html, body, a, button {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Evita il contorno di focus sui click */
+nav a:focus:not(:focus-visible),
+button:focus:not(:focus-visible) {
+    outline: none;
+    box-shadow: none;
+}
+
+/* Mantiene un focus visibile per chi naviga da tastiera */
+nav a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #c8a800;
+    outline-offset: 3px;
+}
         nav {
             background-color: #5a0000;
             text-align: center;
