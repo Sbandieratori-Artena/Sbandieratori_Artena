@@ -287,6 +287,85 @@
             display: block;
         }
 
+                .menu-boxes-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .menu-box {
+            background-color: #4d0000;
+            border: 1px solid #c8a800;
+            border-radius: 10px;
+            padding: 24px 28px;
+            color: #f7edd8;
+        }
+
+        .menu-box-title {
+            font-family: 'Cinzel', serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.12em;
+            color: #c8a800;
+            text-transform: uppercase;
+            margin-bottom: 4px;
+        }
+
+        .menu-box-name {
+            font-family: 'Cinzel', serif;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #f0d060;
+            margin-bottom: 6px;
+        }
+
+        .menu-box-price {
+            font-family: 'Cinzel', serif;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: #fff;
+            margin-bottom: 18px;
+        }
+
+        .menu-box-price span {
+            font-size: 0.85rem;
+            color: #efe0bc;
+            font-weight: 400;
+            font-family: 'Lora', serif;
+            margin-left: 4px;
+        }
+
+        .menu-box ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            border-top: 1px solid rgba(200,168,0,0.3);
+        }
+
+        .menu-box ul li {
+            padding: 8px 0;
+            border-bottom: 1px solid rgba(200,168,0,0.15);
+            font-size: 0.9rem;
+            color: #f7edd8;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: none;
+            box-shadow: none;
+            border-left: none;
+            margin: 0;
+        }
+
+        .menu-box ul li::before {
+            content: '◆';
+            color: #c8a800;
+            font-size: 0.45rem;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 540px) {
+            .menu-boxes-grid { grid-template-columns: 1fr; }
+        }
+
         footer {
             text-align: center;
             background-color: #4d0000;
@@ -507,6 +586,7 @@
         <a href="#fritti">Fritti</a>
         <a href="#dolci">Dolci</a>
         <a href="#bevande">Bevande</a>
+        <a href="#menu-adulti">Menù Fissi</a>
         <a onclick="openAllergeni()">Allergeni</a>
         <a onclick="openInformativa()">Informativa</a>
         <a onclick="openContatti()">Info &amp; Contatti</a>
@@ -588,7 +668,7 @@
                     <span class="menu-item-price">€ 10</span>
                 </li>
                 <li class="menu-item">
-                    <span class="menu-item-name">Aperitivo</span>
+                    <span class="menu-item-name">Tagliere del contadino</span>
                     <span class="menu-item-price">€ 5</span>
                     <span class="menu-item-desc">Tagliere con stuzzichini + bicchiere a scelta (vino · prosecco · bibita)</span>
                 </li>
@@ -741,6 +821,41 @@
             </ul>
         </section>
 
+        <div class="ornament-divider">· · ✦ · ·</div>
+
+        <!-- MENU FISSO -->
+        <section id="menu-adulti">
+            <div class="section-header">
+                <span class="section-ornament">⚜</span>
+                <h2>Menù Fissi</h2>
+                <div class="section-rule"></div>
+            </div>
+            <div class="menu-boxes-grid">
+                <div class="menu-box">
+                    <p class="menu-box-title">Per adulti</p>
+                    <p class="menu-box-name">Menù Completo</p>
+                    <p class="menu-box-price">€ 25 <span>a persona</span></p>
+                    <ul>
+                        <li>Antipasto</li>
+                        <li>Primo del giorno</li>
+                        <li>Grigliata mista</li>
+                        <li>Verdura o patatine</li>
+                        <li>Acqua ½ lt o vino (bicchiere)</li>
+                    </ul>
+                </div>
+                <div class="menu-box">
+                    <p class="menu-box-title">Per bambini</p>
+                    <p class="menu-box-name">Menù Bimbi</p>
+                    <p class="menu-box-price">€ 10 <span>a bambino</span></p>
+                    <ul>
+                        <li>Pasta al pomodoro</li>
+                        <li>Cotoletta con patatine</li>
+                        <li>Acqua ½ lt</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
     </main>
 
     <!-- Modale ALLERGENI -->
@@ -885,6 +1000,7 @@
         <div class="piatto-modal-content">
             <button class="piatto-modal-close" onclick="document.getElementById('modaleTagliere').style.display='none'">×</button>
             <h3>Tagliere dello Sbandieratore</h3>
+            <img src="antipasto.jpg" alt="Tagliere dello Sbandieratore">
             <p>Una selezione di salumi e formaggi, accompagnata da olive, bruschetta al pomodoro e patate croccanti.<br><br>Il tagliere viene servito così come lo vedete: la composizione può variare in base alla disponibilità giornaliera.<br><br><strong>Contiene glutine, latte e derivati del latte.</strong> Informate il personale per eventuali allergie.</p>
         </div>
     </div>
@@ -894,6 +1010,7 @@
         <div class="piatto-modal-content">
             <button class="piatto-modal-close" onclick="document.getElementById('modaleNocchiata').style.display='none'">×</button>
             <h3>Nocchiata</h3>
+            <img src="nocchiata.jpg" alt="Nocchiata artenese">
             <p>Dolce tradizionale artenese alle nocciole e miele.<br><br>L'antica ricetta è di origine contadina e ancora oggi si prepara in casa ad Artena a Natale. Il nome deriva da <em>«nocchie»</em>, le nocciole in dialetto artenese.<br><br>Le nocciole tostate vengono legate con miele caldo — più miele si usa, più i rombi risultano croccanti. A chiusura, ogni porzione viene avvolta tra due foglie di alloro fresco, che le conferiscono il suo aroma inconfondibile.<br><br>Un sapore che sa di festa, di legna e di tradizione.</p>
         </div>
     </div>
