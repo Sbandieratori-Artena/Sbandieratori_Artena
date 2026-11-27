@@ -552,10 +552,11 @@
         .piatto-modal-content img {
             display: block;
             width: 100%;
-            max-width: 360px;
-            max-height: 280px;
-            height: auto;
-            object-fit: contain;
+            max-width: 100%;
+            height: 280px;
+            object-fit: cover;
+            object-position: center;
+            box-sizing: border-box;
             margin: 0 auto 18px;
             border-radius: 10px;
             border: 1px solid rgba(200,168,0,0.55);
@@ -594,7 +595,7 @@
             }
 
             .piatto-modal-content img {
-                max-height: 220px;
+                height: 220px;
             }
         }
 
@@ -1061,7 +1062,7 @@
             <button class="piatto-modal-close" onclick="document.getElementById('modaleTagliere').style.display='none'">×</button>
             <h3>Tagliere dello Sbandieratore</h3>
             <img src="antipasto.jpg" alt="Tagliere dello Sbandieratore">
-            <p>Una selezione di salumi e formaggi, accompagnata da olive, bruschetta al pomodoro e patate croccanti.<br><br>Il tagliere viene servito così come lo vedete: la composizione può variare in base alla disponibilità giornaliera.<br><br><strong>Contiene glutine, latte e derivati del latte.</strong> Informate il personale per eventuali allergie.</p>
+            <p>2 pz. di primo sale e stagionato, olive, bruschetta con olio e sale, bruschetta con paté di olive, 1 pz. di polenta e salamini.<br><br>Il tagliere viene servito così come lo vedete: la composizione può variare in base alla disponibilità giornaliera.<br><br><strong>Contiene glutine, latte e derivati del latte.</strong> Informate il personale per eventuali allergie.</p>
         </div>
     </div>
 
